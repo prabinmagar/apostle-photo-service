@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import { HomeScreen } from "./screens/home/HomeScreen";
 import { Layout } from "./components/common/layout/Layout";
+import { SearchScreen } from "./screens/search/SearchScreen";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomeScreen />
       },
+      {
+        path: "/search",
+        element: <SearchScreen />
+      }
     ]
   },
 ]);
