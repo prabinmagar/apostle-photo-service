@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.explore3 {
+  position: relative;
+  z-index: 50;
+  padding: 0;
+  overflow: hidden;
+  margin: 0;
+  height: 40vh;
+  background: linear-gradient(0deg, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.9)), url("src/assets/images/bg1.png");
+}
+
+.explore3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  z-index: -2;
+  background: rgba(16, 163, 168, 0.442);
+  /*background: linear-gradient(149deg, rgba(16, 163, 168, 1) 0%, rgba(124, 50, 219, 1) 42%, rgba(255, 0, 78, 1) 100%);*/
+}
+.SellContentHeaderGuide {
+  position: relative;
+}
+.SellContentHeaderGuide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40vh;
+  width: 100%;
+  background-image: url("../../public/images/contributor/dash-5.png");
+  background-size: cover;
+  z-index: -1;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .containers {
+    @apply w-[80%] m-auto;
+  }
+  .primary-btn {
+    @apply px-5 py-3 bg-primary rounded-sm text-white text-sm border-2 border-primary transition ease-in-out delay-150  duration-300 capitalize hover:text-primary hover:bg-transparent dark:hover:text-white hover:border-2 hover:border-primary;
+  }
+  .primary-outline-btn {
+    @apply px-5 py-3 text-primary dark:text-white text-sm border-2 border-primary rounded-full capitalize transition ease-in-out delay-150  duration-300 hover:bg-primary hover:text-white;
+  }
+  .primary-outline-btn-sq {
+    @apply px-5 py-3 text-white text-sm border-2 border-primary rounded-sm capitalize transition ease-in-out delay-150  duration-300 hover:bg-primary;
+  }
+  .card_1 {
+    @apply bg-white rounded-lg dark:bg-card_bg border border-[rgba(0,0,0,0.08)] dark:border-[#222f43];
+  }
+}
