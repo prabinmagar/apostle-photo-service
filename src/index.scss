@@ -184,14 +184,73 @@ body {
   mask: var(--mask);
 }
 
-
 // section title
-.section-title{
-  h1, h2, h3, h4, h5{
+.section-title {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     @apply text-2xl lg:text-3xl xxl:text-[32px] leading-[1];
   }
 
-  p{
+  p {
     @apply mt-2 md:mt-1;
   }
+}
+
+// scrollbar
+.preview-modal::-webkit-scrollbar {
+  width: 10px;
+}
+
+.preview-modal::-webkit-scrollbar-track {
+  border-radius: 100vh;
+}
+
+.preview-modal::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 100vh;
+}
+
+// react image css customized
+.image-gallery-thumbnails-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.image-gallery-thumbnail {
+  height: 200px;
+  width: 300px;
+
+  .image-gallery-thumbnail-inner {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: conver !important;
+  }
+
+  .image-gallery-thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-gallery-thumbnail {
+    height: 15s0px!important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image-gallery-thumbnail {
+    height: 100px!important;
+  }
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus,
+.image-gallery-thumbnail:hover {
+  @apply border-moonstone border-[3px];
 }

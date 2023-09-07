@@ -8,6 +8,7 @@ import CustomPrevArrow from "../common/arrow/CustomPrevArrow";
 import Slider from "react-slick";
 import Masonry from "react-masonry-css";
 import { Link } from "react-router-dom";
+import { imagesData } from "../../images";
 
 export const Explore = () => {
   return (
@@ -400,189 +401,11 @@ Card1.propTypes = {
 };
 
 export const Explore5 = () => {
-  const images = [
-    {
-      id: 1,
-      image: "./src/assets/images/featured/nature1.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 2,
-      image: "./src/assets/images/featured/nature2.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 3,
-      image: "./src/assets/images/featured/nature4.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 4,
-      image: "./src/assets/images/featured/wed1.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 5,
-      image: "./src/assets/images/featured/wed2.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 6,
-      image: "./src/assets/images/featured/wed3.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 7,
-      image: "./src/assets/images/featured/wed4.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 8,
-      image: "./src/assets/images/featured/wed5.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 9,
-      image: "./src/assets/images/featured/wed6.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 11,
-      image: "./src/assets/images/featured/new1.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 12,
-      image: "./src/assets/images/featured/new2.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 13,
-      image: "./src/assets/images/featured/new3.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 14,
-      image: "./src/assets/images/featured/new4.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 15,
-      image: "./src/assets/images/featured/new5.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 16,
-      image: "./src/assets/images/featured/mat1.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 17,
-      image: "./src/assets/images/featured/mat2.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 18,
-      image: "./src/assets/images/featured/mat3.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 19,
-      image: "./src/assets/images/featured/mat4.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 20,
-      image: "./src/assets/images/featured/img1.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 21,
-      image: "./src/assets/images/featured/img2.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 22,
-      image: "./src/assets/images/featured/img3.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 23,
-      image: "./src/assets/images/featured/img4.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 24,
-      image: "./src/assets/images/featured/img5.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 25,
-      image: "./src/assets/images/featured/img6.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-    {
-      id: 26,
-      image: "./src/assets/images/featured/img7.jpg",
-      avatar: "./src/assets/images/user.jpg",
-      author: "John Doe",
-      date: "July 30",
-    },
-  ];
-
   const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
+    default: 5,
+    1100: 4,
+    700: 3,
+    500: 2,
   };
 
   return (
@@ -604,7 +427,7 @@ export const Explore5 = () => {
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column my-9"
             >
-              {images.slice(0, 26).map((item) => (
+              {imagesData.slice(0, 26).map((item) => (
                 <div
                   key={item.id}
                   className="masonry-item hover:scale-[1.02] transition-all duration-200 relative group after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/40 after:opacity-0 after:transition-all after:ease-in-out after:duration-300 hover:after:opacity-100 cursor-pointer"
