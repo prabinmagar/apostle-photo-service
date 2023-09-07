@@ -7,5 +7,5 @@ export const HomeScreen = () => {
       <Hero />
       <Explore />
     </>
-  )
-}
+  );
+};
