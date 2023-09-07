@@ -164,44 +164,44 @@ export const ViewSlider = () => {
   };
 
   return (
-    <section className="py-12 view-slider-sc">
+    <section className="py-16 view-slider-sc px-4">
       <div className="containers">
-        <div className="border-3 rounded-xl h-[580px] relative overflow-hidden">
+        <div className="border-3 rounded-xl xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] relative overflow-hidden">
           <Slider
             nextArrow={<CustomNextArrow />}
             prevArrow={<CustomPrevArrow />}
             {...settings}
           >
-            <div className="h-[580px] overflow-hidden relative outline-none">
+            <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
               <img
                 src="src/assets/images/slider1.jpg"
                 className="object-fit-cover"
                 alt=""
               />
-              <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/80 right-5 default-shadow rounded">
-                <p className="font-inter text-sm">By Marcus Arthur - 16th May, 2023</p>
+              <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/90 right-5 default-shadow rounded">
+                <p className="font-inter text-sm opacity-60">By Marcus Arthur - 16th May, 2023</p>
                 <p className="mt-1 font-semibold font-inter text-dark">Thanks Giving Day, 2022</p>
               </div>
             </div>
-            <div className="h-[580px] overflow-hidden relative outline-none">
+            <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
               <img
                 src="src/assets/images/slider2.jpg"
                 className="object-fit-cover"
                 alt=""
               />
-              <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/80 right-5 default-shadow rounded">
-                <p className="font-inter text-sm">By Marcus Arthur - 16th May, 2023</p>
+              <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/90 right-5 default-shadow rounded">
+                <p className="font-inter text-sm opacity-60">By Marcus Arthur - 16th May, 2023</p>
                 <p className="mt-1 font-semibold font-inter text-dark">Thanks Giving Day, 2022</p>
               </div>
             </div>
-            <div className="h-[580px] overflow-hidden relative outline-none">
+            <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
               <img
                 src="src/assets/images/slider3.jpg"
                 className="object-fit-cover"
                 alt=""
               />
-              <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/80 right-5 default-shadow rounded">
-                <p className="font-inter text-sm">By Marcus Arthur - 16th May, 2023</p>
+              <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/90 right-5 default-shadow rounded">
+                <p className="font-inter text-sm opacity-60">By Marcus Arthur - 16th May, 2023</p>
                 <p className="mt-1 font-semibold font-inter text-dark">Thanks Giving Day, 2022</p>
               </div>
             </div>
