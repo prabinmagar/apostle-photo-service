@@ -1,12 +1,13 @@
 import { Button } from "@material-tailwind/react";
 import { AiOutlineLike, AiOutlineSearch, AiOutlineStar } from "react-icons/ai";
 import { BsArrowRepeat } from "react-icons/bs";
-import { SellContentHeroCards } from "./SellContentHero";
 import { TitleHeading } from "../common/design/Title";
 import PropTypes from "prop-types";
 import CustomNextArrow from "../common/arrow/CustomNextArrow";
 import CustomPrevArrow from "../common/arrow/CustomPrevArrow";
 import Slider from "react-slick";
+import Masonry from "react-masonry-css";
+import { Link } from "react-router-dom";
 
 export const Explore = () => {
   return (
@@ -14,7 +15,7 @@ export const Explore = () => {
       <section className="py-12">
         <div className="containers">
           <div className="section-title">
-            <h2 className="text-3xl font-inter text-center font-bold">
+            <h2 className="font-inter text-center font-bold">
               <span className="text-new-blue font-semibold leading-loose text-moonstone">
                 View
               </span>{" "}
@@ -29,63 +30,62 @@ export const Explore = () => {
           <div className="grid explore-grid-one grid-cols-4 grid-rows-3 xxl:gap-4 md:gap-2 gap-1  mt-12">
             <Card
               title="Newborn"
-              gridClass="col-span-2 row-span-2"
+              gridClass="xl:col-span-2 row-span-2 md:col-span-3 col-span-4"
               image="/src/assets/images/featured/new1.jpg"
             />
             <Card
               title="Wedding"
-              gridClass=""
+              gridClass="md:col-span-1 col-span-2"
               image="/src/assets/images/featured/wed1.jpg"
             />
             <Card
               title="Dry Leaves"
-              gridClass=""
+              gridClass="md:col-span-1 col-span-2"
               image="/src/assets/images/featured/nature1.jpg"
             />
             <Card
               title="Maternity"
-              gridClass=""
+              gridClass="xl:col-span-1 col-span-2"
               image="/src/assets/images/featured/mat1.jpg"
             />
             <Card
               title="Promise"
-              gridClass=""
+              gridClass="xl:col-span-1 col-span-2"
               image="/src/assets/images/featured/wed2.jpg"
             />
             <Card
               title="Landscape"
-              gridClass=""
+              gridClass="col-span-2 md:col-span-1"
               image="/src/assets/images/featured/nature2.jpg"
             />
             <Card
               title="Ceremony"
-              gridClass=""
+              gridClass="col-span-2 md:col-span-1"
               image="/src/assets/images/featured/mat2.jpg"
             />
             <Card
               title="Cuteness"
-              gridClass=""
+              gridClass="col-span-2 md:col-span-1"
               image="/src/assets/images/featured/new2.jpg"
             />
             <Card
               title="Love & Care"
-              gridClass=""
+              gridClass="col-span-2 md:col-span-1"
               image="/src/assets/images/featured/new4.jpg"
             />
           </div>
         </div>
       </section>
       <Explore1 />
-      <ViewSlider />
       <Features />
-      <Explore3 />
+      <ViewSlider />
+      {/* <Explore3 /> */}
       <Explore5 />
-      <Explore6 />
-      <Explore4 />
       <Explore7 />
     </>
   );
 };
+
 export const Explore1 = () => {
   const settings = {
     dots: false,
@@ -103,7 +103,7 @@ export const Explore1 = () => {
     <section className="py-12 bg-moonstone/5">
       <div className="containers pb-6">
         <div className="section-title text-start">
-          <h2 className="text-3xl font-inter font-bold">
+          <h2 className="font-inter font-bold">
             <span className="text-new-blue font-semibold leading-loose text-moonstone">
               Colourful
             </span>{" "}
@@ -179,8 +179,12 @@ export const ViewSlider = () => {
                 alt=""
               />
               <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/90 right-5 default-shadow rounded">
-                <p className="font-inter text-sm opacity-60">By Marcus Arthur - 16th May, 2023</p>
-                <p className="mt-1 font-semibold font-inter text-dark">Thanks Giving Day, 2022</p>
+                <p className="font-inter text-sm opacity-60">
+                  By Marcus Arthur - 16th May, 2023
+                </p>
+                <p className="mt-1 font-semibold font-inter text-dark">
+                  Thanks Giving Day, 2022
+                </p>
               </div>
             </div>
             <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
@@ -190,8 +194,12 @@ export const ViewSlider = () => {
                 alt=""
               />
               <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/90 right-5 default-shadow rounded">
-                <p className="font-inter text-sm opacity-60">By Marcus Arthur - 16th May, 2023</p>
-                <p className="mt-1 font-semibold font-inter text-dark">Thanks Giving Day, 2022</p>
+                <p className="font-inter text-sm opacity-60">
+                  By Marcus Arthur - 16th May, 2023
+                </p>
+                <p className="mt-1 font-semibold font-inter text-dark">
+                  Thanks Giving Day, 2022
+                </p>
               </div>
             </div>
             <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
@@ -201,8 +209,12 @@ export const ViewSlider = () => {
                 alt=""
               />
               <div className="absolute top-5 w-[280px] px-4 py-5 left-5 bg-white/90 right-5 default-shadow rounded">
-                <p className="font-inter text-sm opacity-60">By Marcus Arthur - 16th May, 2023</p>
-                <p className="mt-1 font-semibold font-inter text-dark">Thanks Giving Day, 2022</p>
+                <p className="font-inter text-sm opacity-60">
+                  By Marcus Arthur - 16th May, 2023
+                </p>
+                <p className="mt-1 font-semibold font-inter text-dark">
+                  Thanks Giving Day, 2022
+                </p>
               </div>
             </div>
           </Slider>
@@ -214,10 +226,10 @@ export const ViewSlider = () => {
 
 export const Features = () => {
   return (
-    <section className="py-12">
+    <section className="py-16">
       <div className="containers">
         <div className="section-title text-center">
-          <h2 className="text-3xl font-inter font-bold">
+          <h2 className="font-inter font-bold">
             The{" "}
             <span className="text-new-blue font-semibold leading-loose text-moonstone">
               Colourful
@@ -228,41 +240,34 @@ export const Features = () => {
             We keep the perfect collection the photos that you upload.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-5">
-          <div className="left mt-24 flex flex-col gap-8">
-            <Card1
-              icon={<AiOutlineStar size={30} />}
-              title="High-quality stock content"
-              desc="Download scroll-stopping images of the best quality to make your projects look professional."
-            />
-            <Card1
-              icon={<AiOutlineLike size={30} />}
-              title="Ready-to-use assets"
-              desc="Access thousands of images and designs ready-to-publish and get your project ready double quick."
-            />
-            <Card1
-              icon={<AiOutlineSearch size={30} />}
-              title="Guaranteed search results"
-              desc="There’s an image and style for every project, whatever your needs are."
-            />
-            <Card1
-              icon={<BsArrowRepeat size={30} />}
-              title="Fresh content everyday"
-              desc="Our library is updated on a daily basis so you can find the newest and trendiest photos and designs."
-            />
-          </div>
-          <div className="right">
-            <img
-              src="src/assets/images/banner1.webp"
-              alt="banner1"
-              className="w-full h-full object-contain"
-            />
-          </div>
+
+        <div className="grid lg:grid-cols-2 lg:gap-10 gap-6 pt-14 pb-6">
+          <Card1
+            icon={<AiOutlineStar size={30} />}
+            title="Excellent photo preview"
+            desc="Download scroll-stopping images of the best quality to make your projects look professional."
+          />
+          <Card1
+            icon={<AiOutlineLike size={30} />}
+            title="Collection in secure manner"
+            desc="Access thousands of images and designs ready-to-publish and get your project ready double quick."
+          />
+          <Card1
+            icon={<AiOutlineSearch size={30} />}
+            title="Ease of use & access"
+            desc="There’s an image and style for every project, whatever your needs are."
+          />
+          <Card1
+            icon={<BsArrowRepeat size={30} />}
+            title="Fresh content everyday"
+            desc="Our library is updated on a daily basis so you can find the newest and trendiest photos and designs."
+          />
         </div>
       </div>
     </section>
   );
 };
+
 export const Explore3 = () => {
   return (
     <>
@@ -303,38 +308,6 @@ export const Explore3 = () => {
     </>
   );
 };
-export const Explore4 = () => {
-  return (
-    <>
-      <section className="explore4 mt-12 h-[40vh]">
-        <div className="containers px-32 bg-indigo-50 rounded-xl flex items-center justify-between">
-          <div className="left">
-            <h2 className="text-3xl font-semibold">
-              Join SnapHub
-              <span className="text-indigo-500"> creator community </span>
-            </h2>
-            <p className="my-5">
-              Behind every stock image, there’s a creative mind. You can also
-              create content and sell it on Freepik
-            </p>
-            <Button size="lg" color="indigo">
-              Sell content
-            </Button>
-          </div>
-          <div className="right h-[40vh]">
-            <div className="w-full h-full object-contain">
-              <img
-                src="/src/assets/images/banner3.webp"
-                alt="banner2"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
 
 export const Card = ({ title, image, styles, show, gridClass }) => {
   return (
@@ -346,7 +319,7 @@ export const Card = ({ title, image, styles, show, gridClass }) => {
         alt="title"
         className={`w-full h-full object-cover block group-hover:scale-110 group-hover:rotate-6 default-transition`}
       />
-      <h2 className="capitalize font-medium mt-5 text-white absolute bottom-0 m-5 z-30 font-inter">
+      <h2 className="capitalize font-medium mt-5 text-white absolute bottom-0 lg:m-5 m-3 z-30 font-inter">
         {title}
       </h2>
       {show && (
@@ -403,13 +376,18 @@ CardSlanted.propTypes = {
 
 export const Card1 = ({ title, icon, desc }) => {
   return (
-    <div className="box flex gap-5">
-      <div className="icon flex items-center justify-center text-primary bg-red-100 w-16 h-16 rounded-lg">
+    <div className="box flex gap-7">
+      <div className="icon flex items-center justify-center text-moonstone bg-moonstone/10 rounded-full w-[72px] min-w-[72px] h-[72px]">
         {icon}
       </div>
       <div className="details">
-        <h3 className="text-xl font-medium mb-2"> {title}</h3>
-        <p className="text-sm">{desc} </p>
+        <h3 className="text-xl font-semibold mb-2 font-inter text-dark">
+          {" "}
+          {title}
+        </h3>
+        <p className="text-base text-black/70 border-[1px] border-moonstone/20 bg-moonstone/5 py-3 px-4 rounded-lg">
+          {desc}{" "}
+        </p>
       </div>
     </div>
   );
@@ -422,183 +400,295 @@ Card1.propTypes = {
 };
 
 export const Explore5 = () => {
+  const images = [
+    {
+      id: 1,
+      image: "./src/assets/images/featured/nature1.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 2,
+      image: "./src/assets/images/featured/nature2.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 3,
+      image: "./src/assets/images/featured/nature4.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 4,
+      image: "./src/assets/images/featured/wed1.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 5,
+      image: "./src/assets/images/featured/wed2.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 6,
+      image: "./src/assets/images/featured/wed3.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 7,
+      image: "./src/assets/images/featured/wed4.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 8,
+      image: "./src/assets/images/featured/wed5.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 9,
+      image: "./src/assets/images/featured/wed6.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 11,
+      image: "./src/assets/images/featured/new1.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 12,
+      image: "./src/assets/images/featured/new2.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 13,
+      image: "./src/assets/images/featured/new3.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 14,
+      image: "./src/assets/images/featured/new4.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 15,
+      image: "./src/assets/images/featured/new5.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 16,
+      image: "./src/assets/images/featured/mat1.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 17,
+      image: "./src/assets/images/featured/mat2.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 18,
+      image: "./src/assets/images/featured/mat3.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 19,
+      image: "./src/assets/images/featured/mat4.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 20,
+      image: "./src/assets/images/featured/img1.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 21,
+      image: "./src/assets/images/featured/img2.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 22,
+      image: "./src/assets/images/featured/img3.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 23,
+      image: "./src/assets/images/featured/img4.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 24,
+      image: "./src/assets/images/featured/img5.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 25,
+      image: "./src/assets/images/featured/img6.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+    {
+      id: 26,
+      image: "./src/assets/images/featured/img7.jpg",
+      avatar: "./src/assets/images/user.jpg",
+      author: "John Doe",
+      date: "July 30",
+    },
+  ];
+
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
+
   return (
     <>
       <section className="bg-gray-50 py-12">
-        <section className="containers">
-          <div className="text-center">
-            <TitleHeading title1="Stories from our contributors" />
-            <p>
-              Surf categories of professional photos to express your ideas and
-              connect with your audience
+        <div className="containers">
+          <div className="section-title">
+            <h2 className="text-moonstone font-inter text-center font-bold mb-3">
+              Viw Recent uploads from our community
+            </h2>
+            <p className="text-center text-base text-black opacity-70">
+              See the recent pictures that reflect the memories of our community
+              users.
             </p>
           </div>
-          <div className="grid grid-cols-4 gap-5 mt-12">
-            <SellContentHeroCards
-              cover="https://img.freepik.com/free-photo/front-view-smiley-women-taking-selfie_23-2149734544.jpg?size=338&ext=jpg"
-              category="People and emotions"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/free-photo/woman-wearing-sundress_23-2150388737.jpg?size=338&ext=jpg"
-              category="Lifestyle, health and wellness"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/premium-photo/multiethnic-school-kids-teacher-using-smartphone-modern-classroom_116547-33703.jpg?size=338&ext=jpg"
-              category="Education and learning"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/free-photo/happy-woman-using-lap-top-while-sitting-airport-lounge_273443-4233.jpg?size=338&ext=jpg"
-              category="Business and marketing"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/premium-photo/aerial-top-view-forest-tree-rainforest-ecosystem-drone-photography-lake-middle-forest-slovakia_527096-4745.jpg?size=338&ext=jpg"
-              category="Nature"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/free-photo/top-view-appetizing-pozole-bowl_23-2149248515.jpg?size=338&ext=jpg"
-              category="Food and drink"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/free-photo/men-training-capoeira-beach_52683-101105.jpg?size=338&ext=jpg"
-              category="Sport"
-            />
-            <SellContentHeroCards
-              cover="https://img.freepik.com/free-photo/man-wearing-smart-glasses-touching-virtual-screen-futuristic-technology-digital-remix_53876-124731.jpg?size=338&ext=jpg"
-              category="Industry and technology"
-            />
+          <div className="mt-6 masonry-wrapper">
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column my-9"
+            >
+              {images.slice(0, 26).map((item) => (
+                <div
+                  key={item.id}
+                  className="masonry-item hover:scale-[1.02] transition-all duration-200 relative group after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/40 after:opacity-0 after:transition-all after:ease-in-out after:duration-300 hover:after:opacity-100 cursor-pointer"
+                >
+                  <img src={item.image} alt="" />
+                  <div className="item-info opacity-0 group-hover:opacity-100 absolute bottom-[12px] left-[12px] transition-all duration-300 ease-in-out flex items-center justify-start z-10">
+                    <div className="item-info-user w-[36px] h-[36px] rounded-full overflow-hidden me-3">
+                      <img
+                        src={item.avatar}
+                        className="w-full h-full object-fit-cover"
+                        alt="avatar"
+                      />
+                    </div>
+                    <p className="font-medium text-white bg-black/20 px-3 text-sm py-1 rounded-full font-inter">
+                      {item.author}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Masonry>
           </div>
-        </section>
+          <div className="flex items-center justify-center">
+            <Link
+              className="text-center bg-white h-[52px] min-w-[180px] flex items-center justify-center font-inter font-semibold text-lg border-moonstone text-moonstone border-[1px] hover:bg-moonstone hover:text-white default-transition shadow-lg rounded"
+              to="/search"
+            >
+              Explore All
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );
 };
-export const Explore6 = () => {
+
+export const PhotoCard = ({ image }) => {
   return (
-    <>
-      <section className="py-12">
-        <section className="containers">
-          <div className="text-left">
-            <TitleHeading title1="Keep consistency in your designs" />
-            <p>
-              Ensure consistency in your creative process by easily finding all
-              the photos in the same series
-            </p>
-          </div>
-          <div className="grid grid-cols-3 gap-5 mt-10">
-            <div className="box">
-              <div className="h-56">
-                <img
-                  className=" rounded-t-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/full-shot-women-sitting-stairs-with-cat_23-2149522123.jpg?size=626&ext=jpg"
-                  alt=""
-                />
-              </div>
-              <div className="h-32 flex justify-between items-center gap-2 mt-2">
-                <img
-                  className=" rounded-bl-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/full-shot-woman-wearing-hijab_23-2149522155.jpg?size=626&ext=jpg"
-                  alt=""
-                />
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/young-woman-wearing-hijab-medium-shot_23-2149522105.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
-                  alt=""
-                />
-                <img
-                  className=" rounded-br-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/high-angle-young-woman-wearing-hijab_23-2149522144.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="box">
-              <div className="h-56">
-                <img
-                  className=" rounded-t-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/smiley-woman-playing-badminton-front-view_23-2149733043.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
-                  alt=""
-                />
-              </div>
-              <div className="h-32 flex justify-between items-center gap-2 mt-2">
-                <img
-                  className=" rounded-bl-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/side-view-man-holding-badminton-racket_23-2149733050.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
-                  alt=""
-                />
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/full-shot-people-playing-badminton_23-2149733013.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
-                  alt=""
-                />
-                <img
-                  className=" rounded-br-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-holding-racket_23-2149732986.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="box">
-              <div className="h-56">
-                <img
-                  className=" rounded-t-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/full-shot-woman-posing-romantic-garden_23-2150316911.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
-                  alt=""
-                />
-              </div>
-              <div className="h-32 flex justify-between items-center gap-2 mt-2">
-                <img
-                  className=" rounded-bl-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/medium-shot-woman-posing-romantic-garden_23-2150316907.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
-                  alt=""
-                />
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/medium-shot-woman-posing-romantic-garden_23-2150316909.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
-                  alt=""
-                />
-                <img
-                  className=" rounded-br-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/medium-shot-woman-posing-romantic-garden_23-2150316939.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-    </>
+    <div className="">
+      <img src={image} alt="" />
+    </div>
   );
 };
+
+PhotoCard.propTypes = {
+  image: PropTypes.any,
+};
+
 export const Explore7 = () => {
   return (
     <>
       <section className="py-12">
         <section className="containers">
-          <div className="text-left">
-            <TitleHeading title1="The inspiration gallery" />
-            <p>
+          <div className="section-title text-start">
+            <h2 className="font-inter font-bold">
+              The{" "}
+              <span className="text-new-blue font-semibold leading-loose text-moonstone">
+              inspiration
+              </span>{" "}
+               gallery
+            </h2>
+            <p className="text-base text-dark/80 opacity-70">
               Explore curated collections and discover images, moods, and styles
               to ignite your creativity
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-10">
+
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1 md mt-10">
             <div className="box h-96 overflow-hidden flex items-center gap-1">
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/medium-shot-woman-working-late-night_23-2150170690.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/nature1.jpg"
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="https://img.freepik.com/free-photo/full-shot-artisan-doing-woodcutting_23-2150104858.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/nature2.jpg"
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="https://img.freepik.com/free-photo/portrait-woman-wearing-shapewear_23-2149749585.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/nature3.jpg"
                   alt=""
                 />
               </div>
@@ -607,19 +697,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/friends-having-fun-their-reunion_23-2149144289.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/nature4.jpg"
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="https://img.freepik.com/premium-photo/vertical-shot-melted-pink-ice-cream-colorful-background_181624-52455.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/mat3.jpg"
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="https://img.freepik.com/free-photo/female-s-hand-holding-delicious-soft-ice-cream-crispy-waffle-cone-pink-scene_181624-48250.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/mat6.jpg"
                   alt=""
                 />
               </div>
@@ -628,19 +718,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/premium-photo/african-american-black-beautiful-young-woman-eating-hamburger-isolated-yellow-background_255757-3111.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
+                  src="/src/assets/images/featured/nature6.jpg"
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="https://img.freepik.com/premium-photo/burger-cooking-poster-hands-put-cutlet-bun-pineapple-bun-creative-poster-with-flying-tempest_207126-7668.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
+                  src="/src/assets/images/featured/new1.jpg"
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="https://img.freepik.com/free-photo/close-up-hand-holding-delicious-burger_23-2149160036.jpg?size=626&ext=jpg&ga=GA1.2.1279315338.1690169622"
+                  src="/src/assets/images/featured/new2.jpg"
                   alt=""
                 />
               </div>
@@ -649,19 +739,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/premium-photo/female-athletes-communicating-while-taking-break-from-marathon-race-nature-focus-is-woman-drinking-water-from-bottle_637285-6650.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/new3.jpg"
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="https://img.freepik.com/free-photo/side-view-woman-drinking-water-outdoors_23-2149514601.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/new4.jpg"
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="https://img.freepik.com/free-photo/front-view-woman-drinking-water_23-2149622957.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/new5.jpg"
                   alt=""
                 />
               </div>
@@ -670,19 +760,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/female-wedding-planner-working-with-client_23-2150167194.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/new6.jpg"
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="https://img.freepik.com/free-photo/medium-shot-smiley-woman-holding-open-sign_23-2149871140.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/wed3.jpg"
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="https://img.freepik.com/free-photo/albino-person-home-doing-activities_23-2150064997.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/wed4.jpg"
                   alt=""
                 />
               </div>
@@ -691,19 +781,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="https://img.freepik.com/free-photo/woman-listens-music-headphones-scrolls-social-networks-via-smartphone-takes-break-after-workout-poses-outside-against-modern-glass-buiding-being-good-mood_273609-55196.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/wed5.jpg"
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="https://img.freepik.com/free-photo/woman-listens-music-headphones-scrolls-social-networks-via-smartphone-takes-break-after-workout-poses-outside-against-modern-glass-buiding-being-good-mood_273609-55196.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/wed6.jpg"
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="https://img.freepik.com/free-photo/yoga-mat-water-bottle-high-angle_23-2149442711.jpg?size=626&ext=jpg&ga=GA1.1.1279315338.1690169622"
+                  src="/src/assets/images/featured/wed1.jpg"
                   alt=""
                 />
               </div>
