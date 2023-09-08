@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { imagesData } from "../../images";
+import { staticImages } from "../../images";
 
 const Modal = () => {
   const dispatch = useDispatch();
@@ -23,28 +24,28 @@ const Modal = () => {
 
   const images = [
     {
-      original: "/src/assets/images/featured/img1.jpg",
-      thumbnail: "/src/assets/images/featured/img1.jpg",
+      original: staticImages.img1,
+      thumbnail: staticImages.img1,
     },
     {
-      original: "/src/assets/images/featured/img2.jpg",
-      thumbnail: "/src/assets/images/featured/img2.jpg",
+      original: staticImages.img2,
+      thumbnail: staticImages.img2,
     },
     {
-      original: "/src/assets/images/featured/img3.jpg",
-      thumbnail: "/src/assets/images/featured/img3.jpg",
+      original: staticImages.img3,
+      thumbnail: staticImages.img3,
     },
     {
-      original: "/src/assets/images/featured/img4.jpg",
-      thumbnail: "/src/assets/images/featured/img4.jpg",
+      original: staticImages.img4,
+      thumbnail: staticImages.img4,
     },
     {
-      original: "/src/assets/images/featured/img5.jpg",
-      thumbnail: "/src/assets/images/featured/img5.jpg",
+      original: staticImages.img5,
+      thumbnail: staticImages.img5,
     },
     {
-      original: "/src/assets/images/featured/img6.jpg",
-      thumbnail: "/src/assets/images/featured/img6.jpg",
+      original: staticImages.img6,
+      thumbnail: staticImages.img6,
     },
   ];
 
