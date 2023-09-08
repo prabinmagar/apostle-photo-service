@@ -5,6 +5,7 @@ import {
 import { HomeScreen } from "./screens/home/HomeScreen";
 import { Layout } from "./components/common/layout/Layout";
 import { SearchScreen } from "./screens/search/SearchScreen";
+import NotFoundScreen from "./screens/error/NotFoundScreen";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchScreen />
+      },
+      {
+        path: "*",
+        element: <NotFoundScreen />
       }
     ]
   },
