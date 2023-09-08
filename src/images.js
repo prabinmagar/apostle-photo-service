@@ -29,14 +29,22 @@ import img4 from "./assets/images/featured/img4.jpg";
 import img5 from "./assets/images/featured/img5.jpg";
 import img6 from "./assets/images/featured/img6.jpg";
 import img7 from "./assets/images/featured/img7.jpg";
+import port1 from "./assets/images/featured/port1.jpg";
+import port2 from "./assets/images/featured/port2.jpg";
+import port3 from "./assets/images/featured/port3.jpg";
 import hero from "./assets/images/hero.jpg";
 import slider_pattern from "./assets/images/slider_pattern.jpg";
 import slider1 from "./assets/images/slider1.jpg";
 import slider2 from "./assets/images/slider2.jpg";
 import slider3 from "./assets/images/slider3.jpg";
 import user from "./assets/images/user.jpg";
+import maternity from "./assets/images/category/maternity.jpg";
+import nature from "./assets/images/category/nature.jpg";
+import newborn from "./assets/images/category/newborn.jpg";
+import portrait from "./assets/images/category/portrait.jpg";
+import wedding from "./assets/images/category/wedding.jpg";
 
-export const staticImages = {mat1, mat2, mat3, mat4, mat5, mat6, nature1, nature2, nature3, nature4, nature5, nature6, wed1, wed2, wed3, wed4, wed5, wed6, img1, img2, img3, img4, img5, img6, img7, new1, new2, new3, new4, new5, new6, hero, slider1, slider2, slider3, slider_pattern, user };
+export const staticImages = {mat1, mat2, mat3, mat4, mat5, mat6, nature1, nature2, nature3, nature4, nature5, nature6, wed1, wed2, wed3, wed4, wed5, wed6, img1, img2, img3, img4, img5, img6, img7, new1, new2, new3, new4, new5, new6, hero, slider1, slider2, slider3, slider_pattern, user, port1, port2, port3, maternity, nature, newborn, portrait, wedding };
 
 export const imagesData = [
     {

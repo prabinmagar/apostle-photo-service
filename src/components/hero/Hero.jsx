@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomNextArrow from "../common/arrow/CustomNextArrow";
 import CustomPrevArrow from "../common/arrow/CustomPrevArrow";
+import { staticImages } from "../../images";
 
 export const Hero = () => {
   const settings = {
@@ -35,7 +36,7 @@ export const Hero = () => {
       <section
         className="min-h-[58vh]"
         style={{
-          background: `linear-gradient(90deg, rgba(0,143,161,0.8) 0%, rgba(0,188,212,0.6) 100%), url("/src/assets/images/hero.jpg")`,
+          background: `linear-gradient(90deg, rgba(0,143,161,0.8) 0%, rgba(0,188,212,0.6) 100%), url("${staticImages.hero}")`,
         }}
       >
         <div className="md:max-w-[700px] mx-auto py-12 text-white text-center px-3">
@@ -78,28 +79,24 @@ export const Hero = () => {
               {...settings}
             >
               <Card
-                title="Portrait"
-                image="./src/assets/images/category/portrait.jpg"
-              />
-              <Card
                 title="Fashion"
-                image="./src/assets/images/category/portrait.jpg"
+                image={staticImages.portrait}
               />
               <Card
                 title="Newborn"
-                image="./src/assets/images/category/newborn.jpg"
+                image={staticImages.newborn}
               />
               <Card
                 title="Wedding"
-                image="./src/assets/images/category/wedding.jpg"
+                image={staticImages.wedding}
               />
               <Card
                 title="Nature"
-                image="./src/assets/images/category/nature.jpg"
+                image={staticImages.nature}
               />
               <Card
                 title="Maternity"
-                image="./src/assets/images/category/maternity.jpg"
+                image={staticImages.maternity}
               />
             </Slider>
           </div>
