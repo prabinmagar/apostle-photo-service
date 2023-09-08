@@ -81,6 +81,14 @@ body {
   );
 }
 
+.bg-pink-gradient {
+  background: linear-gradient(
+    90deg,
+    rgb(214, 47, 86) 0%,
+    rgba(239, 71, 111, 1) 100%
+  );
+}
+
 .text-blue-gradient {
   background: -webkit-linear-gradient(
     90deg,
@@ -90,6 +98,17 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.text-pink-gradient {
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(214, 47, 86) 0%,
+    rgba(239, 71, 111, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .default-transition {
   @apply ease-in-out transition-all duration-300;
 }
@@ -265,11 +284,35 @@ body {
   @apply border-moonstone border-[3px];
 }
 
-
 // form
-.form-element{
+.form-element {
   @apply default-transition;
-  &:has(input:focus){
+  &:has(input:focus) {
     border-bottom-color: rgba(51, 51, 51, 0.5);
+  }
+}
+
+// text
+.text-custom{
+  @apply text-rich-black/60 font-inter text-sm sm:text-base;
+}
+
+// forms{
+.login,
+.register,
+.forgot-password,
+.reset-password {
+  @apply py-4 min-h-screen;
+  background: linear-gradient(
+    90deg,
+    rgb(244, 246, 249) 0%,
+    rgb(216, 224, 232) 100%
+  );
+  input {
+    @apply focus:bg-white focus:px-4 default-transition;
+  }
+
+  .containers {
+    max-width: 1080px;
   }
 }

@@ -19,6 +19,8 @@ import { Link } from "react-router-dom";
 import { FaEnvelope, FaKey } from "react-icons/fa6";
 import { PiSmileySad } from "react-icons/pi";
 import { FaUserAlt } from "react-icons/fa";
+import AuthHeader from "../../components/header/AuthHeader";
+import AuthFooter from "../../components/footer/AuthFooter";
 
 const initialSate = {
   name: "",
@@ -115,37 +117,37 @@ export default function Register({ cover }) {
   // }, [dispatch, isLoggedIn, isSuccess, navigate]);
 
   return (
-    <>
-      <section className="register">
+    <section className="register">
+      <AuthHeader />
         <div className="containers">
-          <div className="grid grid-cols-2 items-stretch my-16 bg-blue-gradient rounded-2xl shadow-auth">
-            <div className="flex items-center justify-end p-12 relative">
+          <div className="grid md:grid-cols-2 grid-cols-1 items-stretch my-16 bg-blue-gradient rounded-2xl shadow-auth overflow-hidden">
+            <div className="flex items-center justify-end xxl:p-12 p-6 relative">
               <img
                 src="/src/assets/images/login_illus.svg"
                 alt="cover"
-                className="w-full"
+                className="w-full md:max-w-full max-w-[200px] mx-auto"
               />
             </div>
-            <div className="bg-white px-12 pt-12 pb-6 relative flex flex-col justify-between">
+            <div className="bg-white relative flex flex-col justify-between px-4 py-8 sm:px-7 sm:py-10">
               <div>
-                <h3 className="text-4xl text-center mt-12 font-inter font-bold text-dark">
+                <h3 className="lg:text-2xl text-xl text-center font-semibold text-dark-moonstone mb-4">
                   Register Here!
                 </h3>
                 {isLoading && <Loader />}
                 <form
-                  className="flex flex-col gap-5 my-5"
+                  className="flex flex-col md:gap-5 gap-3 my-5"
                   onSubmit={registerUser}
                 >
                   <div className="border-b-[1px] text-base flex items-stretch form-element">
                     <input
                       type="text"
                       placeholder="Username"
-                      className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                      className="w-full md:h-[48px] h-[42px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90 text-sm sm:text-base"
                       name="name"
                       value={name}
                       onChange={handleInputChange}
                     />
-                    <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                    <span className="w-[48px] md:h-[48px] h-[42px] flex items-center justify-center text-dark-blue">
                       <FaUserAlt />
                     </span>
                   </div>
@@ -154,27 +156,27 @@ export default function Register({ cover }) {
                     <input
                       type="email"
                       placeholder="Email Address"
-                      className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                      className="w-full md:h-[48px] h-[42px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90 text-sm sm:text-base"
                       name="email"
                       value={email}
                       onChange={handleInputChange}
                     />
-                    <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                    <span className="w-[48px] md:h-[48px] h-[42px] flex items-center justify-center text-dark-blue">
                       <FaEnvelope />
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-3 lg:gap-y-0">
                     <div className="border-b-[1px] text-base flex items-stretch form-element">
                       <input
                         type="password"
                         placeholder="Password"
-                        className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                        className="w-full md:h-[48px] h-[42px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90 text-sm sm:text-base"
                         onChange={handleInputChange}
                         name="password"
                         value={password}
                       />
-                      <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                      <span className="w-[48px] md:h-[48px] h-[42px] flex items-center justify-center text-dark-blue">
                         <FaKey />
                       </span>
                     </div>
@@ -182,7 +184,7 @@ export default function Register({ cover }) {
                       <input
                         type="password"
                         placeholder="Confirm Password"
-                        className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                        className="w-full md:h-[48px] h-[42px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90 text-sm sm:text-base"
                         onChange={handleInputChange}
                         name="confirmPassword"
                         value={confirmPassword}
@@ -192,29 +194,29 @@ export default function Register({ cover }) {
                           return false;
                         }}
                       />
-                      <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                      <span className="w-[48px] md:h-[48px] h-[42px] flex items-center justify-center text-dark-blue">
                         <FaKey />
                       </span>
                     </div>
                   </div>
                   <button
                     type="submit"
-                    className="bg-blue-gradient text-white rounded  min-h-[52px] uppercase font-inter font-semibold tracking-[1px] shadow-button mt-3 hover:scale-105 default-transition"
+                    className="bg-blue-gradient text-white rounded md:min-h-[52px] min-h-[48px] uppercase font-inter font-semibold tracking-[1px] shadow-button md:mt-3 mt-1 hover:scale-105 default-transition text-sm sm:text-base"
                   >
                     proceed to register
                   </button>
                 </form>
-                <div className="text-base text-center font-inter mt-10">
-                  <p className="inline opacity-70">Already have an account?</p>
+                <div className="text-center font-inter mt-10">
+                  <p className="inline opacity-70 sm:text-base text-sm">Already have an account?</p>
                   <Link
                     href="/register"
-                    className="text-moonstone font-semibold mx-2"
+                    className="text-moonstone font-semibold mx-2 sm:text-base text-sm"
                   >
                     Log in
                   </Link>
                 </div>
 
-                <ul className="my-3 grid grid-cols-1 lg:grid-cols-2 gap-3">
+                <ul className="my-3 grid grid-cols-1 lg:grid-cols-2 gap-3 pb-4">
                   <li
                     className={`text-[12px] font-inter shadow py-[6px] px-2 rounded-sm border-moonstone/70 border-l-4 ${
                       upperCase ? "text-green-500" : "text-gray-500"
@@ -250,28 +252,16 @@ export default function Register({ cover }) {
                 </ul>
               </div>
 
-              {/* <div className="flex items-center justify-center gap-4">
-                <IconButton size="lg" variant="outlined" color="blue-gray">
-                  <FcGoogle size={25} color="white" />
-                </IconButton>
-                <IconButton size="lg" variant="outlined" color="blue">
-                  <BsFacebook size={25} color="blue" />
-                </IconButton>
-                <IconButton size="lg" variant="outlined" color="red">
-                  <HiOutlineMail size={25} color="red" />
-                </IconButton>
-              </div> */}
-
               <div className="border-t-[1px] border-dark/10 pt-4">
-                <p className=" text-white font-semibold text-2xl text-blue-gradient text-center mt-auto">
+                <p className=" text-white font-semibold text-lg text-pink-gradient text-center mt-auto">
                   PhotoIdol Studio.
                 </p>
               </div>
             </div>
           </div>
         </div>
+        <AuthFooter />
       </section>
-    </>
   );
 }
 

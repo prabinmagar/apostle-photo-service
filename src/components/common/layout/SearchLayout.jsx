@@ -1,13 +1,20 @@
-import { Footer } from "@/components/footer/Footer"
-import { SearchHeader } from "@/components/header/SearchHeader"
-import React from "react"
+import { Outlet } from "react-router-dom";
+import { Footer } from "../../footer/Footer";
+import { Header } from "../../header/Header";
+import PropTypes from 'prop-types';
 
-export const SearchLayout = ({ children }) => {
+export const SearchLayout = () => {
   return (
     <>
-      <SearchHeader />
-      <main>{children}</main>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   )
+}
+
+SearchLayout.propTypes = {
+  children: PropTypes.any
 }

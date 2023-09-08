@@ -3,7 +3,7 @@ import { Header } from "../../header/Header";
 import PropTypes from 'prop-types';
 import { Outlet } from "react-router-dom";
 
-export const Layout = () => {
+export const BaseLayout = () => {
   return (
     <>
       <Header />
@@ -15,6 +15,6 @@ export const Layout = () => {
   )
 }
 
-Layout.propTypes = {
+BaseLayout.propTypes = {
   children: PropTypes.any
 }

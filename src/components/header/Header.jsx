@@ -12,10 +12,10 @@ import { AiOutlineUpload } from 'react-icons/ai';
 export const Header = () => {
   return (
     <>
-      <header className="px-8 m-0 py-4 w-full shadow-none rounded-none border-none" style={{
+      <header className="m-0 py-4 w-full shadow-none rounded-none border-none" style={{
         background: `linear-gradient(90deg, rgba(0,143,161,0.8) 0%, rgba(0,188,212,0.6) 100%), url("/src/assets/images/hero.jpg")`
       }}>
-        <div className="flex items-center justify-between text-white">
+        <div className="flex items-center justify-between text-white max-w-[1400px] mx-auto px-4">
           <div className="flex">
             <span className=" text-white font-bold tracking-[1px] xl:text-2xl xl">Photo Idol.</span>
           </div>

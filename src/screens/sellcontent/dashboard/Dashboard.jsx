@@ -1,10 +1,10 @@
 import { Card, Chip, Typography } from "@material-tailwind/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineBarChart, AiOutlineBook, AiOutlineCloudDownload, AiOutlineHeart, AiOutlineNotification, AiOutlineStar } from "react-icons/ai";
 import { BsImages, BsUpload } from "react-icons/bs";
 import { Button, Dialog, DialogHeader, DialogBody } from "@material-tailwind/react";
-import Link from "next/link";
 import { BiSolidHot } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
   return (
