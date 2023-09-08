@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import Masonry from "react-masonry-css";
 import { Link } from "react-router-dom";
 import { imagesData } from "../../images";
+import { staticImages } from "../../images";
 
 export const Explore = () => {
   return (
@@ -32,47 +33,47 @@ export const Explore = () => {
             <Card
               title="Newborn"
               gridClass="xl:col-span-2 row-span-2 md:col-span-3 col-span-4"
-              image="/src/assets/images/featured/new1.jpg"
+              image={staticImages.new1}
             />
             <Card
               title="Wedding"
               gridClass="md:col-span-1 col-span-2"
-              image="/src/assets/images/featured/wed1.jpg"
+              image={staticImages.wed1}
             />
             <Card
               title="Dry Leaves"
               gridClass="md:col-span-1 col-span-2"
-              image="/src/assets/images/featured/nature1.jpg"
+              image={staticImages.nature1}
             />
             <Card
               title="Maternity"
               gridClass="xl:col-span-1 col-span-2"
-              image="/src/assets/images/featured/mat1.jpg"
+              image={staticImages.mat1}
             />
             <Card
               title="Promise"
               gridClass="xl:col-span-1 col-span-2"
-              image="/src/assets/images/featured/wed2.jpg"
+              image={staticImages.wed2}
             />
             <Card
               title="Landscape"
               gridClass="col-span-2 md:col-span-1"
-              image="/src/assets/images/featured/nature2.jpg"
+              image={staticImages.nature2}
             />
             <Card
               title="Ceremony"
               gridClass="col-span-2 md:col-span-1"
-              image="/src/assets/images/featured/mat2.jpg"
+              image={staticImages.mat2}
             />
             <Card
               title="Cuteness"
               gridClass="col-span-2 md:col-span-1"
-              image="/src/assets/images/featured/new2.jpg"
+              image={staticImages.new2}
             />
             <Card
               title="Love & Care"
               gridClass="col-span-2 md:col-span-1"
-              image="/src/assets/images/featured/new4.jpg"
+              image={staticImages.new4}
             />
           </div>
         </div>
@@ -123,25 +124,25 @@ export const Explore1 = () => {
           >
             <CardSlanted
               title="Mountain Climbing"
-              image="src/assets/images/featured/nature4.jpg"
+              image={staticImages.nature4}
               styles="rounded-xl"
               show={true}
             />
             <CardSlanted
               title="Holy Marriage"
-              image="src/assets/images/featured/wed4.jpg"
+              image={staticImages.wed4}
               styles="rounded-xl"
               show={true}
             />
             <CardSlanted
               title="Baby Show Ceremony"
-              image="src/assets/images/featured/mat4.jpg"
+              image={staticImages.mat4}
               styles="rounded-xl"
               show={true}
             />
             <CardSlanted
               title="Welcoming new ones"
-              image="src/assets/images/featured/new4.jpg"
+              image={staticImages.new4}
               styles="rounded-xl"
               show={true}
             />
@@ -175,7 +176,7 @@ export const ViewSlider = () => {
           >
             <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
               <img
-                src="src/assets/images/slider1.jpg"
+                src={staticImages.slider1}
                 className="object-fit-cover"
                 alt=""
               />
@@ -190,7 +191,7 @@ export const ViewSlider = () => {
             </div>
             <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
               <img
-                src="src/assets/images/slider2.jpg"
+                src={staticImages.slider2}
                 className="object-fit-cover"
                 alt=""
               />
@@ -205,7 +206,7 @@ export const ViewSlider = () => {
             </div>
             <div className="xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] overflow-hidden relative outline-none">
               <img
-                src="src/assets/images/slider3.jpg"
+                src={staticImages.slider3}
                 className="object-fit-cover"
                 alt=""
               />
@@ -266,47 +267,6 @@ export const Features = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-export const Explore3 = () => {
-  return (
-    <>
-      <section className="explore3 flex justify-center items-center flex-col">
-        <div className="containers text-white flex items-center justify-between">
-          <div className="left">
-            <h3 className="text-lg font-medium">
-              Welcome to the new{" "}
-              <span className="text-orange-500">SnapHub calendar</span>
-            </h3>
-            <h2 className="text-2xl font-medium mt-5 mb-8">
-              <span className="text-orange-500">
-                All celebrations and events{" "}
-              </span>{" "}
-              <br />
-              are at your fingertips
-            </h2>
-            <Button
-              size="lg"
-              variant="text"
-              color="white"
-              className="bg-[rgba(255,255,255,0.1)]"
-            >
-              Browse calendar
-            </Button>
-          </div>
-          <div className="right">
-            <div className="w-full h-full object-contain pt-32">
-              <img
-                src="/src/assets/images/banner2.webp"
-                alt="banner2"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
   );
 };
 
@@ -499,19 +459,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="/src/assets/images/featured/nature1.jpg"
+                  src={staticImages.nature1}
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="/src/assets/images/featured/nature2.jpg"
+                  src={staticImages.nature2}
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="/src/assets/images/featured/nature3.jpg"
+                  src={staticImages.nature3}
                   alt=""
                 />
               </div>
@@ -520,19 +480,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="/src/assets/images/featured/nature4.jpg"
+                  src={staticImages.nature4}
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="/src/assets/images/featured/mat3.jpg"
+                  src={staticImages.mat3}
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="/src/assets/images/featured/mat6.jpg"
+                  src={staticImages.mat6}
                   alt=""
                 />
               </div>
@@ -541,19 +501,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="/src/assets/images/featured/nature6.jpg"
+                  src={staticImages.nature6}
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="/src/assets/images/featured/new1.jpg"
+                  src={staticImages.new1}
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="/src/assets/images/featured/new2.jpg"
+                  src={staticImages.new2}
                   alt=""
                 />
               </div>
@@ -562,19 +522,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="/src/assets/images/featured/new3.jpg"
+                  src={staticImages.new3}
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="/src/assets/images/featured/new4.jpg"
+                  src={staticImages.new4}
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="/src/assets/images/featured/new5.jpg"
+                  src={staticImages.new5}
                   alt=""
                 />
               </div>
@@ -583,19 +543,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="/src/assets/images/featured/new6.jpg"
+                  src={staticImages.new6}
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="/src/assets/images/featured/wed3.jpg"
+                  src={staticImages.wed3}
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="/src/assets/images/featured/wed4.jpg"
+                  src={staticImages.wed4}
                   alt=""
                 />
               </div>
@@ -604,19 +564,19 @@ export const Explore7 = () => {
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-l-lg w-full h-full object-cover"
-                  src="/src/assets/images/featured/wed5.jpg"
+                  src={staticImages.wed5}
                   alt=""
                 />
               </div>
               <div className="h-96 w-1/2">
                 <img
                   className="rounded-tr-lg w-full object-cover h-[12rem]"
-                  src="/src/assets/images/featured/wed6.jpg"
+                  src={staticImages.wed6}
                   alt=""
                 />
                 <img
                   className="rounded-br-xl w-full object-cover mt-1 h-[12rem]"
-                  src="/src/assets/images/featured/wed1.jpg"
+                  src={staticImages.wed1}
                   alt=""
                 />
               </div>

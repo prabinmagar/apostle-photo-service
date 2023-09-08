@@ -1,4 +1,3 @@
-import React from "react";
 import { AccessLink, NavList } from "./Header";
 import { SearchBox } from "../hero/Hero";
 import Link from "next/link";
