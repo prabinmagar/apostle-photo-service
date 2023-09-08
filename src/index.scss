@@ -80,6 +80,16 @@ body {
     rgba(0, 188, 212, 1) 100%
   );
 }
+
+.text-blue-gradient {
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 143, 161, 1) 0%,
+    rgba(0, 188, 212, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .default-transition {
   @apply ease-in-out transition-all duration-300;
 }
@@ -239,13 +249,13 @@ body {
 
 @media screen and (max-width: 768px) {
   .image-gallery-thumbnail {
-    height: 15s0px!important;
+    height: 15s0px !important;
   }
 }
 
 @media screen and (max-width: 576px) {
   .image-gallery-thumbnail {
-    height: 100px!important;
+    height: 100px !important;
   }
 }
 
@@ -253,4 +263,13 @@ body {
 .image-gallery-thumbnail:focus,
 .image-gallery-thumbnail:hover {
   @apply border-moonstone border-[3px];
+}
+
+
+// form
+.form-element{
+  @apply default-transition;
+  &:has(input:focus){
+    border-bottom-color: rgba(51, 51, 51, 0.5);
+  }
 }

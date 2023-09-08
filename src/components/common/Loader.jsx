@@ -1,6 +1,6 @@
 import { Spinner } from "@material-tailwind/react";
 
-export const Loader = () => {
+export default function Loader (){
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)] z-40">
       <div className=" absolute top-[45%] left-1/2">
@@ -8,4 +8,4 @@ export const Loader = () => {
       </div>
     </div>
   );
-};
+}

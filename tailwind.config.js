@@ -8,7 +8,8 @@ module.exports = withMT({
       colors: {
         primary: "#FF385C",
         'moonstone': "#00BCD4",
-        'dark': "#222"
+        'dark': "#222",
+        'dark-blue': "#607D8B"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -31,6 +32,10 @@ module.exports = withMT({
       boxShadow: {
         shadow1: "0 1px 2px rgba(55,73,87,.1), 0 2px 5px rgba(55,73,87,.15)",
         shadow2: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
+        default: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+        normal: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+        auth: "rgba(0, 0, 0, 0.15) 0px 25px 50px -12px",
+        button: "rgba(0, 143, 161, 0.4) 0px 7px 20px -1px"
       },
     },
   },

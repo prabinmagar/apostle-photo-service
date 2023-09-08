@@ -1,16 +1,24 @@
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Button, IconButton, Input, Typography } from "@material-tailwind/react";
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import {
+  Button,
+  IconButton,
+  Input,
+  Typography,
+} from "@material-tailwind/react";
+// import Link from "next/link";
+import { useState, useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsCheckAll, BsFacebook } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
-import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { RESET, register, sendVerificationEmail } from "@/redux/slices/authSlice";
+// import { RESET, register, sendVerificationEmail } from "@/redux/slices/authSlice";
 import { toast } from "react-toastify";
-import { Loader } from "@/components/common/Loader";
-import { validateEmail } from "@/redux/services/authService";
+import Loader from "../../components/common/Loader";
+// import { validateEmail } from "@/redux/services/authService";
+import { Link } from "react-router-dom";
+import { FaEnvelope, FaKey } from "react-icons/fa6";
+import { PiSmileySad } from "react-icons/pi";
+import { FaUserAlt } from "react-icons/fa";
 
 const initialSate = {
   name: "",
@@ -19,11 +27,12 @@ const initialSate = {
   confirmPassword: "",
 };
 
-export const Register = ({ cover }) => {
-  const navigate = useRouter();
+export default function Register({ cover }) {
+  // const navigate = useRouter();
   const dispatch = useDispatch();
-  const { isLoading, isSuccess, isLoggedIn } = useSelector((state) => state.auth);
-
+  const { isLoading, isSuccess, isLoggedIn } = useSelector(
+    (state) => state.auth
+  );
   const [formData, setFormData] = useState(initialSate);
   const [upperCase, setUpperCase] = useState(false);
   const [number, setNumber] = useState(false);
@@ -85,119 +94,195 @@ export const Register = ({ cover }) => {
     if (password !== confirmPassword) {
       return toast.error("Passwords do not match");
     }
-    if (!validateEmail(email)) {
-      return toast.error("Email is not valid");
-    }
+    // if (!validateEmail(email)) {
+    //   return toast.error("Email is not valid");
+    // }
     const userData = {
       name,
       email,
       password,
     };
-    await dispatch(register(userData));
-    await dispatch(sendVerificationEmail());
+    // await dispatch(register(userData));
+    // await dispatch(sendVerificationEmail());
   };
 
-  useEffect(() => {
-    if (isSuccess && isLoggedIn) {
-      navigate.push("/");
-    }
+  // useEffect(() => {
+  //   if (isSuccess && isLoggedIn) {
+  //     navigate.push("/");
+  //   }
 
-    dispatch(RESET());
-  }, [dispatch, isLoggedIn, isSuccess, navigate]);
+  //   dispatch(RESET());
+  // }, [dispatch, isLoggedIn, isSuccess, navigate]);
+
   return (
     <>
-      <section className="login h-[100vh]">
-        <div className="flex justify-between">
-          <div className="left w-2/3">
-            <div className="h-[100vh] w-full">
-              <img src={cover} alt="l1" className=" w-full h-full object-cover" />
-            </div>
-          </div>
-          <div className="right w-1/3 px-16 py-2">
-            <div className="text-center">
-              <Link href="/">
-                <Typography color="red" variant="h2">
-                  SnapHub
-                </Typography>
-              </Link>
-            </div>
-            <h3 className="text-lg text-center mt-12 font-medium">Create an account</h3>
-            {isLoading && <Loader />}
-            <form className="flex flex-col gap-5 my-5" onSubmit={registerUser}>
-              <Input name="name" value={name} onChange={handleInputChange} label="Username" color="red" size="lg" />
-              <Input name="email" value={email} onChange={handleInputChange} label="Email" color="red" size="lg" />
-              <PasswordInput placeholder="Password" required name="password" value={password} onChange={handleInputChange} />
-              <PasswordInput
-                placeholder="Confirm Password"
-                required
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={handleInputChange}
-                onPaste={(e) => {
-                  e.preventDefault();
-                  toast.error("Cannot paste into input field");
-                  return false;
-                }}
+      <section className="register">
+        <div className="containers">
+          <div className="grid grid-cols-2 items-stretch my-16 bg-blue-gradient rounded-2xl shadow-auth">
+            <div className="flex items-center justify-end p-12 relative">
+              <img
+                src="/src/assets/images/login_illus.svg"
+                alt="cover"
+                className="w-full"
               />
-              <button className="primary-btn rounded-lg">Register</button>
-            </form>
-            <ul className="box my-3 border border-indigo-300 p-3 rounded-lg">
-              <li className={`text-[12px] ${upperCase ? "text-green-500" : "text-gray-500"} flex items-center gap-2`}>
-                {switchIcon(upperCase)}
-                Lowercase & Uppercase
-              </li>
-              <li className={`text-[12px] ${number ? "text-green-500" : "text-gray-500"} flex items-center gap-2`}>
-                {switchIcon(number)}
-                Number (0-9)
-              </li>
-              <li className={`text-[12px] ${specialChar ? "text-green-500" : "text-gray-500"} flex items-center gap-2`}>
-                {switchIcon(specialChar)}
-                Special Character (!@#$%^&*)
-              </li>
-              <li className={`text-[12px] ${passwordLength ? "text-green-500" : "text-gray-500"} flex items-center gap-2`}>
-                {switchIcon(passwordLength)}
-                At least 8 Character
-              </li>
-            </ul>
-            <h3 className="text-sm text-center">
-              Already have an account?
-              <Link href="/auth/login" className="text-primary font-semibold">
-                Log in
-              </Link>
-            </h3>
-            <h3 className="text-lg text-center my-8 font-medium">OR</h3>
-            {/*     <Button size="lg" variant="gradient" color="indigo"NEXT>
-                Continue with Google
-                <span className="absolute left-0 grid h-full w-12 place-items-center bg-indigo-600 transition-colors group-hover:bg-indigo-700">
-                  <AiOutlineGoogle size={25} color="white" />
-                </span>
-              </Button> */}
-            <div className="flex items-center justify-center gap-4">
-              <IconButton size="lg" variant="outlined" color="blue-gray">
-                <FcGoogle size={25} color="white" />
-              </IconButton>
-              <IconButton size="lg" variant="outlined" color="blue">
-                <BsFacebook size={25} color="blue" />
-              </IconButton>
-              <IconButton size="lg" variant="outlined" color="red">
-                <HiOutlineMail size={25} color="red" />
-              </IconButton>
             </div>
+            <div className="bg-white px-12 pt-12 pb-6 relative flex flex-col justify-between">
+              <div>
+                <h3 className="text-4xl text-center mt-12 font-inter font-bold text-dark">
+                  Register Here!
+                </h3>
+                {isLoading && <Loader />}
+                <form
+                  className="flex flex-col gap-5 my-5"
+                  onSubmit={registerUser}
+                >
+                  <div className="border-b-[1px] text-base flex items-stretch form-element">
+                    <input
+                      type="text"
+                      placeholder="Username"
+                      className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                      name="name"
+                      value={name}
+                      onChange={handleInputChange}
+                    />
+                    <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                      <FaUserAlt />
+                    </span>
+                  </div>
 
-            {/*    <div className="text-xl font-semibold flex justify-center items-center gap-2 mt-8">
-              <span className="text-[#208E9F]">By</span>
-              <div className="h-8">
-                <img src="/images/apptec.png" alt="apptech" className="w-full h-full object-contain" />
+                  <div className="border-b-[1px] text-base flex items-stretch form-element">
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                      name="email"
+                      value={email}
+                      onChange={handleInputChange}
+                    />
+                    <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                      <FaEnvelope />
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+                    <div className="border-b-[1px] text-base flex items-stretch form-element">
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                        onChange={handleInputChange}
+                        name="password"
+                        value={password}
+                      />
+                      <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                        <FaKey />
+                      </span>
+                    </div>
+                    <div className="border-b-[1px] text-base flex items-stretch form-element">
+                      <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        className="w-full h-[48px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90"
+                        onChange={handleInputChange}
+                        name="confirmPassword"
+                        value={confirmPassword}
+                        onPaste={(e) => {
+                          e.preventDefault();
+                          toast.error("Cannot paste into input field");
+                          return false;
+                        }}
+                      />
+                      <span className="w-[48px] h-[48px] flex items-center justify-center text-dark-blue">
+                        <FaKey />
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-blue-gradient text-white rounded  min-h-[52px] uppercase font-inter font-semibold tracking-[1px] shadow-button mt-3 hover:scale-105 default-transition"
+                  >
+                    proceed to register
+                  </button>
+                </form>
+                <div className="text-base text-center font-inter mt-10">
+                  <p className="inline opacity-70">Already have an account?</p>
+                  <Link
+                    href="/register"
+                    className="text-moonstone font-semibold mx-2"
+                  >
+                    Log in
+                  </Link>
+                </div>
+
+                <ul className="my-3 grid grid-cols-1 lg:grid-cols-2 gap-3">
+                  <li
+                    className={`text-[12px] font-inter shadow py-[6px] px-2 rounded-sm border-moonstone/70 border-l-4 ${
+                      upperCase ? "text-green-500" : "text-gray-500"
+                    } flex items-center gap-2`}
+                  >
+                    {switchIcon(upperCase)}
+                    Lowercase & Uppercase
+                  </li>
+                  <li
+                    className={`text-[12px] font-inter shadow py-[6px] px-2 rounded-sm border-moonstone/70 border-l-4 ${
+                      number ? "text-green-500" : "text-gray-500"
+                    } flex items-center gap-2`}
+                  >
+                    {switchIcon(number)}
+                    Number (0-9)
+                  </li>
+                  <li
+                    className={`text-[12px] font-inter shadow py-[6px] px-2 rounded-sm border-moonstone/70 border-l-4 ${
+                      specialChar ? "text-green-500" : "text-gray-500"
+                    } flex items-center gap-2`}
+                  >
+                    {switchIcon(specialChar)}
+                    Special Character (!@#$%^&*)
+                  </li>
+                  <li
+                    className={`text-[12px] font-inter shadow py-[6px] px-2 rounded-sm border-moonstone/70 border-l-4 ${
+                      passwordLength ? "text-green-500" : "text-gray-500"
+                    } flex items-center gap-2`}
+                  >
+                    {switchIcon(passwordLength)}
+                    At least 8 Character
+                  </li>
+                </ul>
               </div>
-            </div> */}
+
+              {/* <div className="flex items-center justify-center gap-4">
+                <IconButton size="lg" variant="outlined" color="blue-gray">
+                  <FcGoogle size={25} color="white" />
+                </IconButton>
+                <IconButton size="lg" variant="outlined" color="blue">
+                  <BsFacebook size={25} color="blue" />
+                </IconButton>
+                <IconButton size="lg" variant="outlined" color="red">
+                  <HiOutlineMail size={25} color="red" />
+                </IconButton>
+              </div> */}
+
+              <div className="border-t-[1px] border-dark/10 pt-4">
+                <p className=" text-white font-semibold text-2xl text-blue-gradient text-center mt-auto">
+                  PhotoIdol Studio.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
-};
+}
 
-export const PasswordInput = ({ fieldName, value, name, onChange, onPaste, placeholder }) => {
+export const PasswordInput = ({
+  fieldName,
+  value,
+  name,
+  onChange,
+  onPaste,
+  placeholder,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = () => {
@@ -207,10 +292,29 @@ export const PasswordInput = ({ fieldName, value, name, onChange, onPaste, place
   return (
     <>
       <div className="input">
-        <label className="block my-2 text-sm font-medium text-gray-900">{fieldName}</label>
+        <label className="block my-2 text-sm font-medium text-gray-900">
+          {fieldName}
+        </label>
 
         <div className="relative">
-          <Input color="red" label={placeholder} type={showPassword ? "text" : "password"} value={value} name={name} onChange={onChange} onPaste={onPaste} icon={<div onClick={togglePassword}>{showPassword ? <AiFillEyeInvisible size={25} /> : <AiFillEye size={25} />}</div>} />
+          <Input
+            color="red"
+            label={placeholder}
+            type={showPassword ? "text" : "password"}
+            value={value}
+            name={name}
+            onChange={onChange}
+            onPaste={onPaste}
+            icon={
+              <div onClick={togglePassword}>
+                {showPassword ? (
+                  <AiFillEyeInvisible size={25} />
+                ) : (
+                  <AiFillEye size={25} />
+                )}
+              </div>
+            }
+          />
         </div>
       </div>
     </>
