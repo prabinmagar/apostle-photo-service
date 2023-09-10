@@ -34,7 +34,7 @@ export const Footer = () => {
               </li>
             </ul>
             <p className="font-light py-[2px] text-white/50 opacity-80 text-sm font-inter text-center ">
-              New Road, Kathmandu, Nepal &nbsp;|&nbsp; Photo Idol Studio
+            Dhobihgat, Lalitpur, Nepal &nbsp;|&nbsp; Photo Idol Studio
             </p>
           </div>
           <div className="text-md font-medium text-center border-t-[1px] border-white/5 pt-6">
