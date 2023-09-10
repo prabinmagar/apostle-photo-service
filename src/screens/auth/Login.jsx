@@ -15,6 +15,7 @@ import { FaEnvelope, FaKey } from "react-icons/fa";
 import { PiSmileySad } from "react-icons/pi";
 import AuthHeader from "../../components/header/AuthHeader";
 import AuthFooter from "../../components/footer/AuthFooter";
+import { staticImages } from "../../images";
 
 const initialSate = {
   password: "",
@@ -71,7 +72,7 @@ export default function Login({ cover }) {
           <div className="grid md:grid-cols-2 grid-cols-1 items-stretch my-16 bg-blue-gradient rounded-2xl shadow-auth overflow-hidden">
             <div className="flex items-center justify-end xxl:p-12 p-6 relative">
               <img
-                src="/src/assets/images/login_illus.svg"
+                src={staticImages.login_illus}
                 alt="cover"
                 className="w-full md:max-w-full max-w-[200px] mx-auto"
               />

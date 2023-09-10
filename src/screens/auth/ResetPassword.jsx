@@ -6,6 +6,7 @@ import Loader from "../../components/common/Loader";
 import { FaKey } from "react-icons/fa6";
 import AuthHeader from "../../components/header/AuthHeader";
 import AuthFooter from "../../components/footer/AuthFooter";
+import { staticImages } from "../../images";
 
 const initialState = {
   password: "",
@@ -60,7 +61,7 @@ export const ResetPassword = ({ cover }) => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-stretch my-16 rounded-2xl overflow-hidden shadow-auth">
             <div className="flex items-center bg-white/60 justify-end xxl:p-12 p-6 relative">
               <img
-                src="/src/assets/images/reset_illus.svg"
+                src={staticImages.reset_illus}
                 alt="cover"
                 className="w-full md:max-w-full max-w-[200px] mx-auto"
               />

@@ -11,6 +11,7 @@ import AuthHeader from "../../components/header/AuthHeader";
 import AuthFooter from "../../components/footer/AuthFooter";
 import { FaHashtag } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { staticImages } from "../../images";
 
 export const LoginWithOTP = ({ cover }) => {
   // const router = useRouter();
@@ -60,7 +61,7 @@ export const LoginWithOTP = ({ cover }) => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-stretch my-16 bg-blue-gradient rounded-2xl shadow-auth overflow-hidden">
             <div className="flex items-center justify-end xxl:p-12 p-6 relative">
               <img
-                src="/src/assets/images/otp_illus.svg"
+                src={staticImages.otp_illus}
                 alt="cover"
                 className="w-full md:max-w-full max-w-[200px] mx-auto"
               />

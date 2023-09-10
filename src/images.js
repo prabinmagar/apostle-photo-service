@@ -45,6 +45,10 @@ import portrait from "./assets/images/category/portrait.jpg";
 import wedding from "./assets/images/category/wedding.jpg";
 import avatar from "./assets/images/avatar.png";
 import intro_hero from "./assets/images/admin/intro_hero.jpg";
+import forgot_illus from "./assets/images/forgot_illus.svg";
+import login_illus from "./assets/images/login_illus.svg";
+import otp_illus from "./assets/images/otp_illus.svg";
+import reset_illus from "./assets/images/reset_illus.svg";
 
 export const staticImages = {
   mat1,
@@ -93,7 +97,11 @@ export const staticImages = {
   portrait,
   wedding,
   avatar,
-  intro_hero
+  intro_hero,
+  forgot_illus,
+  login_illus,
+  otp_illus,
+  reset_illus
 };
 
 export const imagesData = [

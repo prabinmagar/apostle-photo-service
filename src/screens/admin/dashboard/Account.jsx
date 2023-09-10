@@ -105,7 +105,7 @@ export function Account() {
                         <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2 font-inter" htmlFor="grid-password">
                           Address
                         </label>
-                        <input type="text" className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150 outline-none shadow-none border-[1px] border-gray-200 bg-whitesmoke font-medium font-inter" defaultValue="New Road, Kathmandu" readOnly />
+                        <input type="text" className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150 outline-none shadow-none border-[1px] border-gray-200 bg-whitesmoke font-medium font-inter" defaultValue="Dhobihgat lalitpur, Kathmandu" readOnly />
                       </div>
                     </div>
                     <div className="w-full lg:w-4/12 px-1">
@@ -213,7 +213,7 @@ export function Account() {
                         <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2 font-inter" htmlFor="grid-password">
                           Address
                         </label>
-                        <input type="text" className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150 outline-none shadow-none border-[1px] border-gray-200 bg-whitesmoke font-medium font-inter" defaultValue="New Road, Kathmandu" readOnly />
+                        <input type="text" className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150 outline-none shadow-none border-[1px] border-gray-200 bg-whitesmoke font-medium font-inter" defaultValue="Dhobihgat lalitpur, Kathmandu" readOnly />
                       </div>
                     </div>
                     <div className="w-full lg:w-4/12 px-1">

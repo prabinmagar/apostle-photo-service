@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { FaEnvelope, FaKey } from "react-icons/fa6";
+import { staticImages } from "../../images";
 
 export const Forgetpassword = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export const Forgetpassword = () => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-stretch my-16 rounded-2xl overflow-hidden shadow-auth">
             <div className="flex items-center bg-white/60 justify-end xxl:p-12 p-6 relative">
               <img
-                src="/src/assets/images/forgot_illus.svg"
+                src={staticImages.forgot_illus}
                 alt="cover"
                 className="w-full md:max-w-full max-w-[200px] mx-auto"
               />
