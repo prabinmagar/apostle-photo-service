@@ -16,7 +16,7 @@ const AuthFooter = () => {
       </ul>
       <div className="text-sm text-custom font-medium text-center mt-4 md:mt-0 opacity-80 md:text-end">
         &copy; Design and Developed by{" "}
-        <span className="font-bold">GorkCoder Team.</span>
+        <span className="font-bold">Faith Tech.</span>
         </div>
     </div>
   )

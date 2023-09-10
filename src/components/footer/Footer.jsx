@@ -34,12 +34,12 @@ export const Footer = () => {
               </li>
             </ul>
             <p className="font-light py-[2px] text-white/50 opacity-80 text-sm font-inter text-center ">
-              New Baneshwor, Kathmandu, Nepal &nbsp;|&nbsp; Photo Idol Studio
+              New Road, Kathmandu, Nepal &nbsp;|&nbsp; Photo Idol Studio
             </p>
           </div>
           <div className="text-md font-medium text-center border-t-[1px] border-white/5 pt-6">
             &copy; Design and Developed by{" "}
-            <span className="text-gray-500 font-bold">GorkCoder Team.</span>
+            <span className="text-gray-500 font-bold">Faith Tech.</span>
           </div>
         </div>
       </footer>
