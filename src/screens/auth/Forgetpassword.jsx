@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import { FaEnvelope, FaKey } from "react-icons/fa6";
 import { staticImages } from "../../images";
 import { Link } from "react-router-dom";
+import AuthHeader from "../../components/header/AuthHeader";
+import AuthFooter from "../../components/footer/AuthFooter";
 
 export const Forgetpassword = () => {
   const dispatch = useDispatch();
@@ -34,6 +36,7 @@ export const Forgetpassword = () => {
   return (
     <>
       <section className="forgot-password">
+        <AuthHeader />
         <div className="containers">
           <div className="grid md:grid-cols-2 grid-cols-1 items-stretch my-16 rounded-2xl overflow-hidden shadow-auth">
             <div className="flex items-center bg-white/60 justify-end xxl:p-12 p-6 relative">
@@ -81,6 +84,7 @@ export const Forgetpassword = () => {
             </div>
           </div>
         </div>
+        <AuthFooter />
       </section>
     </>
   );
