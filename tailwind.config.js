@@ -12,7 +12,9 @@ module.exports = withMT({
         'dark-blue': "#607D8B",
         'dark-moonstone': "#0E3338",
         'pink': "#EF476F",
-        'rich-black': "#001011"
+        'rich-black': "#001011",
+        'whitesmoke': "#F8F8F8",
+        "ghostwhite": "#f5f5f5"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

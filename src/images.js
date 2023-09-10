@@ -43,6 +43,8 @@ import nature from "./assets/images/category/nature.jpg";
 import newborn from "./assets/images/category/newborn.jpg";
 import portrait from "./assets/images/category/portrait.jpg";
 import wedding from "./assets/images/category/wedding.jpg";
+import avatar from "./assets/images/avatar.png";
+import intro_hero from "./assets/images/admin/intro_hero.jpg";
 
 export const staticImages = {
   mat1,
@@ -90,6 +92,8 @@ export const staticImages = {
   newborn,
   portrait,
   wedding,
+  avatar,
+  intro_hero
 };
 
 export const imagesData = [

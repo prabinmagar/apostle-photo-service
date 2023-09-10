@@ -99,7 +99,7 @@ export const ResetPassword = ({ cover }) => {
 
                   <button
                     type="submit"
-                    className="bg-pink-gradient text-white rounded  md:min-h-[52px] min-h-[48px] uppercase font-inter font-semibold tracking-[1px] shadow-button2 md:mt-3 mt-1 hover:scale-105 default-transition text-sm sm:text-base"
+                    className="bg-pink-gradient text-white rounded md:min-h-[52px] min-h-[48px] uppercase font-inter font-semibold tracking-[1px] shadow-button2 md:mt-3 mt-1 hover:scale-105 default-transition text-sm sm:text-base"
                   >
                     reset password
                   </button>

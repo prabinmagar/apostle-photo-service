@@ -229,17 +229,18 @@ body {
 }
 
 // scrollbar
-.preview-modal::-webkit-scrollbar {
-  width: 10px;
-}
+.preview-modal, .upload-drawer{
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
 
-.preview-modal::-webkit-scrollbar-track {
-  border-radius: 100vh;
-}
+  &::-webkit-scrollbar-track {
+    border-radius: 100vh;
+  }
 
-.preview-modal::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 100vh;
+  &::-webkit-scrollbar-track {
+    border-radius: 100vh;
+  }
 }
 
 // react image css customized
@@ -301,7 +302,8 @@ body {
 .login,
 .register,
 .forgot-password,
-.reset-password {
+.reset-password,
+.login-with-otp {
   @apply py-4 min-h-screen;
   background: linear-gradient(
     90deg,
@@ -314,5 +316,17 @@ body {
 
   .containers {
     max-width: 1080px;
+  }
+}
+
+
+.active-link{
+  @apply bg-moonstone rounded-lg text-white shadow-button;
+}
+
+// admin sidebar 
+.sidebar-change{
+  @media screen and (max-width: 992px){
+    margin-left: -260px;
   }
 }

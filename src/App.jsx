@@ -11,9 +11,13 @@ import Login from "./screens/auth/Login";
 import Register from "./screens/auth/Register";
 import { Forgetpassword } from "./screens/auth/Forgetpassword";
 import { ResetPassword } from "./screens/auth/ResetPassword";
+import { LoginWithOTP } from "./screens/auth/LoginWithOTP";
 // dashboard
-import { Dashboard } from "./screens/sellcontent/dashboard/Dashboard";
-// import { AdminLayout } from "./components/common/layout/AdminLayout";
+import { Dashboard } from "./screens/admin/dashboard/Dashboard";
+import { AdminLayout } from "./components/common/layout/AdminLayout";
+import Images from "./screens/admin/dashboard/Images";
+import { Gallery } from "./screens/admin/dashboard/Gallery";
+import { Account } from "./screens/admin/dashboard/Account";
 
 const router = createBrowserRouter([
   {
@@ -36,16 +40,28 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/admin",
-  //   element: <AdminLayout />,
-  //   children: [
-  //     {
-  //       path: "/dashboard",
-  //       element: <
-  //     }
-  //   ]
-  // },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "/admin",
+        element: <Dashboard />
+      },
+      {
+        path: "/admin/images",
+        element: <Images />
+      },
+      {
+        path: "/admin/account",
+        element: <Account />
+      },
+      {
+        path: "/admin/gallery",
+        element: <Gallery />
+      }
+    ]
+  },
   {
     path: "/login",
     element: <Login />,
@@ -61,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: "/reset-password",
     element: <ResetPassword />,
+  },
+  {
+    path: "/login-with-otp",
+    element: <LoginWithOTP />
   },
   {
     path: "*",

@@ -1,10 +1,9 @@
 import React from "react";
-import { LogoText } from "../SearchHeader";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { AiOutlineUserAdd } from "react-icons/ai";
-import { UserProfileAfterLogin } from "../Header";
+import { UserProfileAfterLogin } from "./UserProfileAterLogin";
 
-export const SellContentHeader = () => {
+export const ContentHeader = () => {
   const linkData = [
     {
       id: 1,
@@ -36,7 +35,7 @@ export const SellContentHeader = () => {
         <div className="flex items-center justify-between containers">
           <div className="flex items-center gap-10">
             <div className="logo flex gap-1 items-center">
-              <LogoText />
+              {/* <LogoText /> */}
               <h3 className="font-normal text-2xl">Contributor</h3>
             </div>
             <div className="nav">

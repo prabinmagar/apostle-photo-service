@@ -18,7 +18,7 @@ export const Explore = () => {
         <div className="containers">
           <div className="section-title">
             <h2 className="font-inter text-center font-bold">
-              <span className="text-new-blue font-semibold leading-loose text-moonstone">
+              <span className="text-new-blue font-semibold leading-loose text-pink">
                 View
               </span>{" "}
               your stored collection
@@ -102,7 +102,7 @@ export const Explore1 = () => {
   };
 
   return (
-    <section className="py-12 bg-moonstone/5">
+    <section className="py-12">
       <div className="containers pb-6">
         <div className="section-title text-start">
           <h2 className="font-inter font-bold">
@@ -228,7 +228,9 @@ export const ViewSlider = () => {
 
 export const Features = () => {
   return (
-    <section className="py-16">
+    <section className="py-16" style={{
+      background: "linear-gradient(90deg, rgba(146,205,250,0.4) 0%, rgba(199,235,255,0.4) 100%)"
+    }}>
       <div className="containers">
         <div className="section-title text-center">
           <h2 className="font-inter font-bold">
@@ -338,7 +340,7 @@ CardSlanted.propTypes = {
 export const Card1 = ({ title, icon, desc }) => {
   return (
     <div className="box flex gap-7">
-      <div className="icon flex items-center justify-center text-moonstone bg-moonstone/10 rounded-full w-[72px] min-w-[72px] h-[72px]">
+      <div className="icon flex items-center justify-center text-white bg-moonstone default-shadow rounded-full w-[72px] min-w-[72px] h-[72px]">
         {icon}
       </div>
       <div className="details">
@@ -346,7 +348,7 @@ export const Card1 = ({ title, icon, desc }) => {
           {" "}
           {title}
         </h3>
-        <p className="text-base text-black/70 border-[1px] border-moonstone/20 bg-moonstone/5 py-3 px-4 rounded-lg">
+        <p className="text-base text-black/50 border-[1px] border-moonstone/20 bg-white py-5 px-6 rounded-lg default-shadow hover:-mt-1 default-transition">
           {desc}{" "}
         </p>
       </div>
