@@ -8,10 +8,10 @@ const AuthFooter = () => {
             <Link to="/" className='text-custom opacity-80 hover:opacity-100 default-transition font-bold'>Photo Idol</Link>
         </li>
         <li className='mx-3'>
-            <Link to="/" className='text-custom opacity-80 hover:opacity-100 default-transition font-medium'>Back to Login</Link>
+            <Link to="/login" className='text-custom opacity-80 hover:opacity-100 default-transition font-medium'>Back to Login</Link>
         </li>
         <li className='mx-3'>
-            <Link to="/" className='text-custom opacity-80 hover:opacity-100 default-transition font-medium'>Register Here</Link>
+            <Link to="/register" className='text-custom opacity-80 hover:opacity-100 default-transition font-medium'>Register Here</Link>
         </li>
       </ul>
       <div className="text-sm text-custom font-medium text-center mt-4 md:mt-0 opacity-80 md:text-end">

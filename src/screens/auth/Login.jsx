@@ -116,7 +116,7 @@ export default function Login({ cover }) {
                     Don’t you have an account?
                   </p>
                   <Link
-                    href="/register"
+                    to="/register"
                     className="text-moonstone font-semibold mx-2 sm:text-base text-sm"
                   >
                     Sign up
@@ -125,7 +125,7 @@ export default function Login({ cover }) {
                 <div className="text-center mt-3 flex items-center justify-center mb-6">
                   <PiSmileySad size={24} />
                   <Link
-                    href="/forgetpassword"
+                    to="/forgetpassword"
                     className="text-dark font-semibold font-inter sm:text-base text-sm ms-2"
                   >
                     Forgot Password?
@@ -135,7 +135,7 @@ export default function Login({ cover }) {
              
               <div className="border-t-[1px] border-dark/10 pt-4">
                 <p className=" text-white font-semibold text-lg text-blue-gradient text-center mt-auto">
-                  PhotoIdol Studio.
+                <Link to = "/">PhotoIdol Studio.</Link>
                 </p>
               </div>
             </div>

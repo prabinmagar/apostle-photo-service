@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { FaEnvelope, FaKey } from "react-icons/fa6";
 import { staticImages } from "../../images";
+import { Link } from "react-router-dom";
 
 export const Forgetpassword = () => {
   const dispatch = useDispatch();
@@ -74,7 +75,7 @@ export const Forgetpassword = () => {
 
               <div className="border-t-[1px] border-dark/10 pt-4">
                 <p className=" text-white font-semibold text-lg text-pink-gradient text-center mt-auto">
-                  PhotoIdol Studio.
+                  <Link to = "/">PhotoIdol Studio.</Link>
                 </p>
               </div>
             </div>
