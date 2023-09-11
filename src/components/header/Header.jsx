@@ -18,7 +18,7 @@ export const Header = () => {
       }}>
         <div className="flex items-center justify-between text-white max-w-[1400px] mx-auto px-4">
           <div className="flex">
-            <span className=" text-white font-bold tracking-[1px] xl:text-2xl xl">Photo Idol.</span>
+            <span className=" text-white font-bold tracking-[1px] xl:text-2xl text-xl">Photo Idol.</span>
           </div>
           <div className="text-sm flex gap-5 items-center">
             <Link to="/login" className="font-semibold uppercase tracking-[1px] font-inter flex items-center"><BiLogInCircle size = { 18 } className="me-[6px]" /> Login</Link>

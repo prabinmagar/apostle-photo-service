@@ -18,6 +18,7 @@ import { AdminLayout } from "./components/common/layout/AdminLayout";
 import Images from "./screens/admin/dashboard/Images";
 import { Gallery } from "./screens/admin/dashboard/Gallery";
 import { Account } from "./screens/admin/dashboard/Account";
+import DetailsPage from "./screens/details/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path: "/search",
         element: <SearchScreen />,
       },
+      {
+        path: "/search/1",
+        element: <DetailsPage />
+      }
     ],
   },
   {

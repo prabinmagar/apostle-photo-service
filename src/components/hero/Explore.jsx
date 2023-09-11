@@ -168,7 +168,7 @@ export const ViewSlider = () => {
   return (
     <section className="py-16 view-slider-sc px-4">
       <div className="containers">
-        <div className="border-3 rounded-xl xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] relative overflow-hidden">
+        <div className="border-3 overflow-hidden xl:h-[580px] lg:h-[540px] md:h-[480px] h-[400px] relative">
           <Slider
             nextArrow={<CustomNextArrow />}
             prevArrow={<CustomPrevArrow />}
@@ -228,8 +228,8 @@ export const ViewSlider = () => {
 
 export const Features = () => {
   return (
-    <section className="py-16" style={{
-      background: "linear-gradient(90deg, rgba(146,205,250,0.4) 0%, rgba(199,235,255,0.4) 100%)"
+    <section className="py-16" style ={{
+      background: `url("${staticImages.slider_pattern}") center/cover no-repeat`
     }}>
       <div className="containers">
         <div className="section-title text-center">
@@ -375,7 +375,7 @@ export const Explore5 = () => {
       <section className="bg-gray-50 py-12">
         <div className="containers">
           <div className="section-title">
-            <h2 className="text-moonstone font-inter text-center font-bold mb-3">
+            <h2 className="font-inter text-center font-bold mb-3">
               Viw Recent uploads from our community
             </h2>
             <p className="text-center text-base text-black opacity-70">

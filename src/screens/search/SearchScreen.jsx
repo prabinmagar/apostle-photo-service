@@ -16,22 +16,23 @@ import { MdOutlineSmartScreen } from "react-icons/md";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { CgScreenWide, CgStyle } from "react-icons/cg";
 import { Box, ImageList, ImageListItem } from "@mui/material";
-import { imagesData } from "../../images";
+import { imagesData, staticImages } from "../../images";
 import Masonry from "react-masonry-css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsModalOpen, setModalOpen } from "../../redux/slices/modalSlice";
 import Modal from "../../components/common/Modal";
 import { BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const SearchScreen = () => {
   return (
     <>
-      <SidebarMainContent />
+      <SearchContent />
     </>
   );
 };
 
-export const SidebarMainContent = () => {
+export const SearchContent = () => {
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -46,13 +47,15 @@ export const SidebarMainContent = () => {
   return (
     <>
       {isModalOpen && <Modal />}
-      <div className="masonary-search flex justify-center flex-col mt-10 mb-6">
+      <div className="masonary-search flex justify-center flex-col py-12 border-t-2 border-white/30" style={{
+        background: `linear-gradient(90deg, rgba(0, 143, 161, 0.3) 0%, rgba(0, 188, 212, 0.6) 100%), url("${staticImages.hero}") center/cover no-repeat`
+      }}>
         <div className="containers flex-col">
-          <h4 className="text-center md:text-base text-sm max-w-[780px] mx-auto font-inter text-dark/70 opacity-70">
+          <h4 className="text-center md:text-base text-sm max-w-[780px] mx-auto font-inter  text-white">
             Explore our photo gallery, a visual journey through moments frozen
             in time.
           </h4>
-          <form className="flex justify-center items-center border-[1px] border-black/5 w-full max-w-[700px] mx-auto px-6 h-[56px] shadow-md shadow-dark/5 rounded font-inter  placeholder:opacity-70 mt-4">
+          <form className="flex justify-center items-center border-[1px] border-black/5 w-full max-w-[700px] mx-auto px-6 md:h-[56px] sm:h-[52px] h-[48px] shadow-md shadow-dark/5 rounded font-inter placeholder:opacity-70 mt-4 bg-white">
             <input
               type="text"
               className="outline-none w-full"
@@ -60,7 +63,7 @@ export const SidebarMainContent = () => {
             />
             <button
               type="submit"
-              className="h-[40px] inline-flex items-center justify-center text-xl text-dark"
+              className="h-[40px] inline-flex items-center justify-center text-xl text-rich-black/50"
             >
               <BsSearch />
             </button>
@@ -71,12 +74,12 @@ export const SidebarMainContent = () => {
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column my-9"
+          columnClassName="my-masonry-grid_column sm:my-9 my-5"
         >
           {imagesData.map((item, index) => (
-            <div
+            <Link to = "/search/1"
               key={index}
-              onClick={() => dispatch(setModalOpen())}
+              // onClick={() => dispatch(setModalOpen())}
               className="masonry-item hover:scale-[1.02] transition-all duration-200 relative group after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/40 after:opacity-0 after:transition-all after:ease-in-out after:duration-300 hover:after:opacity-100"
             >
               <img src={item.image} alt="" />
@@ -92,7 +95,7 @@ export const SidebarMainContent = () => {
                   Marcus Lucas Arthur
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </Masonry>
       </div>

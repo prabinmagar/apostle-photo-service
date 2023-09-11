@@ -7,7 +7,7 @@ export const SearchLayout = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="min-h-screen">
         <Outlet />
       </main>
       <Footer />

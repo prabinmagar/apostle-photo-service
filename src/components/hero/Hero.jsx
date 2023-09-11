@@ -40,15 +40,15 @@ export const Hero = () => {
         }}
       >
         <div className="md:max-w-[700px] mx-auto py-12 text-white text-center px-3">
-          <h2 className="xl:text-4xl text-3xl max-w-[350px] md:max-w-[700px] mx-auto font-bold font-inter mb-4">
+          <h2 className="xl:text-4xl sm:text-3xl text-2xl max-w-[280px] sm:max-w-[350px] md:max-w-[700px] mx-auto font-bold font-inter mb-4">
             All your photo collection in one place
           </h2>
-          <h4 className="md:text-xl text-base mt-5 lg:mt-0">
+          <h4 className="md:text-xl sm:text-base text-sm mt-5 lg:mt-0">
             Explore your high-quality{" "}
             <BsImageFill className="inline-flex ms-2" /> photos, all in one
             place
           </h4>
-          <div className="mt-8">
+          <div className="sm:mt-8 mt-4">
             <form>
               <div
                 className="flex items-center rounded xl:h-[56px] h-[52px] ps-5 w-full outline-none text-dark bg-white"
@@ -71,7 +71,7 @@ export const Hero = () => {
             </form>
           </div>
         </div>
-        <div className="py-8 overflow-hidden">
+        <div className="sm:py-8 py-4 overflow-hidden">
           <div className="overflow-hidden">
             <Slider
               nextArrow={<CustomNextArrow />}

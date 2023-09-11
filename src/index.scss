@@ -158,7 +158,6 @@ body {
 }
 
 .view-slider-sc {
-  background: url("./assets/images/slider_pattern.jpg") center/cover no-repeat;
   .containers {
     @apply relative after:absolute after:-top-2 after:-bottom-2 after:-right-2 after:-left-2 after:bg-white py-2 px-2 rounded-2xl overflow-hidden;
     .slick-slider {
@@ -208,9 +207,15 @@ body {
     )
     100% 50% / 100% 100% repeat-x;
 
-  border: 1px #d8d8d8 dashed;
+  // border: 1px #d8d8d8 dashed;
   -webkit-mask: var(--mask);
   mask: var(--mask);
+}
+
+.image-gallery-svg{
+  color: #00bcd4;
+  box-shadow: none;
+  filter: none;
 }
 
 // section title

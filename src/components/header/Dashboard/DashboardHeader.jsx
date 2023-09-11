@@ -12,7 +12,11 @@ import {
   AccordionBody,
   ListItemPrefix,
 } from "@material-tailwind/react";
-import { AiOutlineCloudUpload, AiOutlineClockCircle, AiFillPlusCircle } from "react-icons/ai";
+import {
+  AiOutlineCloudUpload,
+  AiOutlineClockCircle,
+  AiFillPlusCircle,
+} from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { BsDot, BsFiletypePsd, BsImages, BsUiChecksGrid } from "react-icons/bs";
@@ -89,7 +93,7 @@ export const UploadContent = () => {
         className="border-[1px] border-pink bg-pink px-8 py-2.5 rounded-md flex items-center gap-2 text-white shadow hover:shadow-lg default-transition ms-auto"
       >
         <AiOutlineCloudUpload size={18} />
-        <span>Upload Photo</span>
+        <span className="font-inter">Upload Photo</span>
       </button>
 
       <Drawer
@@ -100,7 +104,10 @@ export const UploadContent = () => {
         size={600}
       >
         <div className="py-2.5 flex justify-between gap-4 items-center px-4 border-b-[1px] border-gray-200">
-          <Typography variant="h6" className="font-normal text-lg relative">
+          <Typography
+            variant="h6"
+            className="font-normal text-lg relative font-inter"
+          >
             Upload Photo
           </Typography>
           <button
@@ -121,7 +128,10 @@ export const UploadContent = () => {
             />
           }
         >
-          <AccordionHeader onClick={() => handleOpen(1)} className="px-4 py-2 border-gray-200">
+          <AccordionHeader
+            onClick={() => handleOpen(1)}
+            className="px-4 py-2 border-gray-200"
+          >
             <Typography className="mr-auto font-normal">
               Technical requirements
             </Typography>
@@ -145,22 +155,25 @@ export const UploadContent = () => {
         </Accordion>
         <div className="w-full px-4">
           <div className="mt-6">
-          <label
-            htmlFor="dropzone-file"
-            className="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-          >
-            <div className="flex flex-col items-center justify-center">
-              <AiOutlineCloudUpload size={52} className="text-black/30 mb-3" />
-              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                <span className="font-semibold">Click to upload</span> or drag
-                and drop
-              </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                SVG, PNG, JPG or GIF (MAX. 800x400px)
-              </p>
-            </div>
-            <input id="dropzone-file" type="file" className="hidden" />
-          </label>
+            <label
+              htmlFor="dropzone-file"
+              className="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+            >
+              <div className="flex flex-col items-center justify-center">
+                <AiOutlineCloudUpload
+                  size={52}
+                  className="text-black/30 mb-3"
+                />
+                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">Click to upload</span> or drag
+                  and drop
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  SVG, PNG, JPG or GIF (MAX. 800x400px)
+                </p>
+              </div>
+              <input id="dropzone-file" type="file" className="hidden" />
+            </label>
           </div>
           <Card color="transparent" shadow={false}>
             <form className="mt-8 mb-2">
@@ -181,16 +194,27 @@ export const UploadContent = () => {
                   className="uppercase text-blueGray-600 text-sm font-bold mb-2 font-inter flex items-center"
                   htmlFor="grid-password"
                 >
-                  category <Link to = "/admin/category" className="flex items-center ms-2 hover:text-moonstone default-transition"><AiFillPlusCircle size = { 22 } /></Link>
+                  category{" "}
+                  <Link
+                    to="/admin/category"
+                    className="flex items-center ms-2 hover:text-rich-black default-transition"
+                  >
+                    <AiFillPlusCircle size={22} />
+                  </Link>
                 </label>
-                <input
+                <select
                   type="text"
                   className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150 outline-none shadow-none border-[1px] border-gray-200 bg-whitesmoke font-medium font-inter"
-                />
+                >
+                  <option value="">Wedding</option>
+                  <option value="">Nature</option>
+                  <option value="">Maternity</option>
+                  <option value="">New born</option>
+                </select>
               </div>
               <div className="relative w-full mb-3">
                 <label
-                  className="block uppercase text-blueGray-600 text-xs font-bold mb-2 font-inter"
+                  className="block uppercase text-blueGray-600 text-sm font-bold mb-2 font-inter"
                   htmlFor="grid-password"
                 >
                   Description

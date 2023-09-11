@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 export const Gallery = () => {
   return (
-    <section className="py-10 bg-gray-100">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6  md:grid-cols-3 xxl:grid-cols-5">
+    <section className="py-6 bg-gray-100 rounded-lg my-6">
+      <div className="mx-auto px-2 grid max-w-6xl grid-cols-2 gap-6  md:grid-cols-3 xxl:grid-cols-5">
         {
             imagesData.map((image) => (
                 <GalleryItem key = {image.id} data={image} />
