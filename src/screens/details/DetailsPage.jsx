@@ -87,7 +87,7 @@ const DetailsPage = () => {
               </h2>
               <div className="w-full px-3">
                 <textarea
-                  className="bg-white rounded border border-gray-300 resize-none w-full h-20 p-3 placeholder-gray-700 font-inter text-sm focus:outline-none focus:bg-white"
+                  className="bg-white rounded border border-gray-300 resize-none w-full h-40 p-3 placeholder-gray-700 font-inter text-sm focus:outline-none focus:bg-white"
                   name="body"
                   placeholder="Type Your Comment"
                   required

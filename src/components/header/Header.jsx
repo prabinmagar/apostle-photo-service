@@ -17,9 +17,9 @@ export const Header = () => {
         background: `linear-gradient(90deg, rgba(0,143,161,0.8) 0%, rgba(0,188,212,0.6) 100%), url("${staticImages.hero}")`
       }}>
         <div className="flex items-center justify-between text-white max-w-[1400px] mx-auto px-4">
-          <div className="flex">
+          <Link to ="/" className="flex">
             <span className=" text-white font-bold tracking-[1px] xl:text-2xl text-xl">Photo Idol.</span>
-          </div>
+          </Link>
           <div className="text-sm flex gap-5 items-center">
             <Link to="/login" className="font-semibold uppercase tracking-[1px] font-inter flex items-center"><BiLogInCircle size = { 18 } className="me-[6px]" /> Login</Link>
             <Link to="/register" className="border border-white px-4 py-[8px] rounded font-semibold uppercase tracking-[1px] hover:bg-white hover:text-moonstone transition-all ease-in-out duration-200" style={{ boxShadow: "rgba(99, 99, 99, 0.15) 0px 2px 8px 0px"}}>
