@@ -3,7 +3,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { BiChevronDown, BiHelpCircle, BiUserCircle, BiLogInCircle } from "react-icons/bi";
 import { AiOutlineDashboard, AiOutlinePoweroff, AiOutlineSetting } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { ShowOnLogout, ShowOnLogin } from "../protect/HiddenLink";
 import { Link } from "react-router-dom";
 import { RESET, logout, selectUser } from "../../redux/slices/authSlice";
 import PropTypes from 'prop-types';
