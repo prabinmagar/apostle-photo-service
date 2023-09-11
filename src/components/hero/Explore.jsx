@@ -274,8 +274,8 @@ export const Features = () => {
 
 export const Card = ({ title, image, styles, show, gridClass }) => {
   return (
-    <div
-      className={`card shadow rounded overflow-hidden relative ${gridClass} overlay-black-gradient group`}
+    <Link
+      className={`card shadow rounded overflow-hidden relative ${gridClass} overlay-black-gradient group block`}
     >
       <img
         src={image}
@@ -290,7 +290,7 @@ export const Card = ({ title, image, styles, show, gridClass }) => {
           className={`${styles} overlay absolute top-0 w-full bg-gray-400 rotate-6 -z-10`}
         ></div>
       )}
-    </div>
+    </Link>
   );
 };
 
@@ -304,7 +304,7 @@ Card.propTypes = {
 
 export const CardSlanted = ({ title, image, styles, show }) => {
   return (
-    <div className="px-2">
+    <Link to = "/search" className="px-2 block">
       <div
         className="card text-start rounded-xl relative group my-3"
         style={{
@@ -325,7 +325,7 @@ export const CardSlanted = ({ title, image, styles, show }) => {
           {title}
         </h2>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -390,9 +390,9 @@ export const Explore5 = () => {
               columnClassName="my-masonry-grid_column my-9"
             >
               {imagesData.slice(0, 26).map((item) => (
-                <div
+                <Link to = "/search/1"
                   key={item.id}
-                  className="masonry-item hover:scale-[1.02] transition-all duration-200 relative group after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/40 after:opacity-0 after:transition-all after:ease-in-out after:duration-300 hover:after:opacity-100 cursor-pointer"
+                  className="block masonry-item hover:scale-[1.02] transition-all duration-200 relative group after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/40 after:opacity-0 after:transition-all after:ease-in-out after:duration-300 hover:after:opacity-100 cursor-pointer"
                 >
                   <img src={item.image} alt="" />
                   <div className="item-info opacity-0 group-hover:opacity-100 absolute bottom-[12px] left-[12px] transition-all duration-300 ease-in-out flex items-center justify-start z-10">
@@ -407,7 +407,7 @@ export const Explore5 = () => {
                       {item.author}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </Masonry>
           </div>

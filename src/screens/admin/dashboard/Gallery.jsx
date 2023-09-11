@@ -24,11 +24,11 @@ export const GalleryItem = (props) => {
           <img src={props.data.image} className="w-full h-full object-cover" />
         </div>
 
-        <div className="mt-1 p-2">
+        <div className="p-1 mt-1 flex items-center flex-wrap">
           <Typography className="font-inter font-medium text-sm">
-            Uploaded By: { props.data.author}
+            { props.data.author}
           </Typography>
-          <p className="mt-1 text-dark-moonstone font-inter text-xs">
+          <p className="text-dark-moonstone font-inter text-xs ps-2">
             {props.data.date}
           </p>
         </div>
