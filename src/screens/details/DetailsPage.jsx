@@ -9,10 +9,9 @@ import {
   BsFillCameraFill,
   BsShare,
 } from "react-icons/bs";
-import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Booking from "../../components/common/booking";
+import ContactInfo from "../../components/common/ContactInfo";
 
 const DetailsPage = () => {
   const scrollToTop = () => {
@@ -162,7 +161,7 @@ const DetailsPage = () => {
           </div>
         </div>
       </div>
-      <Booking />
+      <ContactInfo />
     </>
   );
 };
