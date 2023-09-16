@@ -49,6 +49,13 @@ import forgot_illus from "./assets/images/forgot_illus.svg";
 import login_illus from "./assets/images/login_illus.svg";
 import otp_illus from "./assets/images/otp_illus.svg";
 import reset_illus from "./assets/images/reset_illus.svg";
+import banner1 from "./assets/images/banner1.jpg";
+import banner2 from "./assets/images/banner2.jpg";
+import banner3 from "./assets/images/banner3.jpg";
+import banner4 from "./assets/images/banner4.jpg";
+import modal from "./assets/images/modal.jpg";
+import branch from "./assets/images/branch.png";
+import booking from "./assets/images/booking.svg";
 
 export const staticImages = {
   mat1,
@@ -101,7 +108,14 @@ export const staticImages = {
   forgot_illus,
   login_illus,
   otp_illus,
-  reset_illus
+  reset_illus,
+  banner1, 
+  banner2, 
+  banner3, 
+  banner4, 
+  modal, 
+  branch,
+  booking
 };
 
 export const imagesData = [

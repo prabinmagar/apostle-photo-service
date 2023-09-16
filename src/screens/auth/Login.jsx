@@ -4,7 +4,7 @@
 import { IconButton, Input } from "@material-tailwind/react";
 // import Link from "next/link";
 // import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { BsEnvelope, BsFacebook, BsMailbox } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { HiOutlineMail } from "react-icons/hi";
@@ -17,53 +17,7 @@ import AuthHeader from "../../components/header/AuthHeader";
 import AuthFooter from "../../components/footer/AuthFooter";
 import { staticImages } from "../../images";
 
-const initialSate = {
-  password: "",
-  email: "",
-};
-
-export default function Login({ cover }) {
-  // const navigate = useRouter();
-  const dispatch = useDispatch();
-  const [formData, setFormData] = useState(initialSate);
-
-  const { isLoading, isSuccess, isError, isLoggedIn, twoFactor } = useSelector(
-    (state) => state.auth
-  );
-  const { password, email } = formData;
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const loginUser = async (e) => {
-    e.preventDefault();
-    if (!email || !password) {
-      // return toast.error("All fields are required");
-    }
-    // if (!validateEmail(email)) {
-    //   return toast.error("Email is not valid");
-    // }
-    const userData = {
-      email,
-      password,
-    };
-    // await dispatch(login(userData));
-  };
-
-  // useEffect(() => {
-  //   if (isSuccess && isLoggedIn) {
-  //     navigate.push("/");
-  //   }
-  //   // login with otp
-  //   if (isError && twoFactor) {
-  //     dispatch(sendLoginCode(email));
-  //     navigate.push(`/auth/otp/${email}`);
-  //   }
-  //   dispatch(RESET());
-  // }, [dispatch, isLoggedIn, isSuccess, navigate, isError, twoFactor]);
-
+export default function Login() {
   return (
     <>
       <section className="login">
@@ -82,8 +36,7 @@ export default function Login({ cover }) {
                 <h3 className="lg:text-2xl text-xl text-center font-semibold text-dark-moonstone mb-4">
                   Login
                 </h3>
-                {isLoading && <Loader />}
-                <form className="flex flex-col md:gap-5 gap-3 my-5" onSubmit={loginUser}>
+                <form className="flex flex-col md:gap-5 gap-3 my-5">
                   <div className="border-b-[1px] text-base flex items-stretch form-element">
                     <input
                       type="text"

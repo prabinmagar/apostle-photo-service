@@ -27,6 +27,11 @@
     @apply mt-2 md:mt-1;
   }
 }
+.slider-item{
+  h2{
+    line-height: 1.2;
+  }
+}
 
 // text
 .text-custom{
@@ -39,3 +44,21 @@
   }
 }
 
+// country select options
+.css-13cymwt-control{
+  @apply h-[48px];
+  border: 1px solid rgba(0, 0, 0, 0.05)!important;
+
+  &:focus{
+    height: 48px!important;
+  }
+}
+.css-art2ul-ValueContainer2{
+  height: 48px;
+}
+.css-1dimb5e-singleValue {
+  color: rgba(178, 178, 178, 0.9)!important;
+}
+.css-1nmdiq5-menu{
+  color: #607D8B;
+}

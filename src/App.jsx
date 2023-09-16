@@ -19,6 +19,9 @@ import Images from "./screens/admin/dashboard/Images";
 import { Gallery } from "./screens/admin/dashboard/Gallery";
 import { Account } from "./screens/admin/dashboard/Account";
 import DetailsPage from "./screens/details/DetailsPage";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const router = createBrowserRouter([
   {
@@ -94,6 +97,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Animation duration
+      offset: 100,   // Offset (in pixels) from the top of the screen
+      easing: 'ease', // Easing function
+      once: true,     // Only animate elements once
+    });
+  }, []);
   return <RouterProvider router={router} />;
 }
 

@@ -8,109 +8,64 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { imagesData } from "../../images";
 import { staticImages } from "../../images";
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillMail,
+  AiFillPhone,
+  AiFillRedEnvelope,
+  AiOutlineClose,
+} from "react-icons/ai";
 
 const Modal = () => {
   const dispatch = useDispatch();
-  const [selectedImage, setSelectedImage] = useState("/images/b2.avif");
-  const handlePreviewItemClick = (newImageSrc) => {
-    setSelectedImage(newImageSrc);
-  };
 
-  const handleOverlayClick = (e) => {
-    if (e.target.classList.contains("modal-overlay")) {
-      dispatch(setModalClose());
-    }
-  };
-
-  const images = [
-    {
-      original: staticImages.img1,
-      thumbnail: staticImages.img1,
-    },
-    {
-      original: staticImages.img2,
-      thumbnail: staticImages.img2,
-    },
-    {
-      original: staticImages.img3,
-      thumbnail: staticImages.img3,
-    },
-    {
-      original: staticImages.img4,
-      thumbnail: staticImages.img4,
-    },
-    {
-      original: staticImages.img5,
-      thumbnail: staticImages.img5,
-    },
-    {
-      original: staticImages.img6,
-      thumbnail: staticImages.img6,
-    },
-  ];
+  // const handleOverlayClick = (e) => {
+  //   if (e.target.classList.contains("modal-overlay")) {
+  //     dispatch(setModalClose());
+  //   }
+  // };
 
   return (
-    <div
-      className="fixed modal-overlay w-full h-full left-0 top-0 right-0 bottom-0 bg-black/50 z-30"
-      onClick={handleOverlayClick}
-    >
-      <div
-        className="preview-modal bg-white min-h-[400px] lg:max-w-[70vw] max-w-[90vw] absolute top-10 left-1/2 w-full -translate-x-1/2 right-10 bottom-10 z-50 rounded-lg px-4 py-4 overflow-y-scroll"
-        style={{
-          boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-        }}
-      >
-        <div className="details-header px-2 flex items-center justify-between border-b-[1px] border-black/10 pb-3">
-          <div className="flex items-center">
-            <div className="rounded-full w-[40px] h-[40px] overflow-hidden me-3 bg-green-700">
-              <img
-                src="/src/assets/images/user.jpg"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-semibold text-black/90 font-inter">Marcus Arthur</span>{" "}
-              <span className="text-xs font-inter">@marcus</span>
-            </div>
+    <div className="fixed modal-overlay w-full h-full left-0 top-0 right-0 bottom-0 bg-black/80 z-50">
+      <div className="preview-modal bg-white min-h-[500px] lg:max-w-[600px] max-w-[90vw] absolute top-1/2 -translate-y-1/2 left-1/2 w-full -translate-x-1/2 right-10 bottom-10 z-50 rounded-lg flex flex-col items-center justify-between">
+        <button
+          type="button"
+          className="absolute top-3 right-2 text-dark z-[100]"
+          onClick={() => dispatch(setModalClose())}
+        >
+          <AiOutlineClose size={25} className="text-dark" />
+        </button>
+        <div className="py-4">
+          <img
+            src={`${staticImages.modal}`}
+            className="max-w-[260px] relative"
+            alt=""
+          />
+        </div>
+        <div className="w-full z-10 relative bg-blue-gradient px-3 py-8 text-center text-white">
+          <h2 className="text-4xl uppercase font-bold ">book us!</h2>
+          <h3 className="leading-[1.3] font-inter font-bold  text-2xl p-3 border-b-[1px] border-white">
+            For Wedding & Event Photography
+          </h3>
+          <p className="font-inter mt-4">
+            You can receive upto 40% discount as our special offers.
+          </p>
+          <div className="flex justify-center items-center mt-2">
+            <AiFillPhone />
+            <span className="ms-1 italic">+977 984099805</span>
           </div>
-          <p className=" font-medium hidden text-sm lg:inline-block font-inter">
-            DC009585_naturebg.jpeg
-          </p>
-          <button
-            type="button"
-            className="text-black/70"
-            onClick={() => dispatch(setModalClose())}
-          >
-            <GrClose size={20} />
-          </button>
-        </div>
-
-        <div className="my-4">
-            <ImageGallery items={images.slice(0, 3)} />
-        </div>
-
-        <div className="image-description border-t-[1px] border-black/5 py-5 px-2">
-          <p className="opacity-80">
-            A beautiful and ancient spring fed canyon which weaves its way
-            throught 400 meter.
-          </p>
-
-          <ul className="mt-4">
-            <li className="flex items-center my-2">
-              <span className="me-3">
-                <BsCalendarDate />
-              </span>
-              <span className="opacity-80 text-sm">
-                Uploaded on June 23, 2023
-              </span>
-            </li>
-            <li className="flex items-center my-2">
-              <span className="me-3">
-                <BsFillCameraFill size={18} />
-              </span>
-              <span className="opacity-80 text-sm">Full HD Quality</span>
-            </li>
-          </ul>
+          <div className="flex justify-center items-center mt-4">
+            <a className="mx-[6px]" href="https://facebook.com">
+              <AiFillFacebook size={23} />
+            </a>
+            <a className="mx-[6px]" href="https://facebook.com">
+              <AiFillMail size={24} />
+            </a>
+            <a className="mx-[6px]" href="https://facebook.com">
+              <AiFillInstagram size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

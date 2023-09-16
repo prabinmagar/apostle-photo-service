@@ -46,9 +46,8 @@ export const SearchContent = () => {
 
   return (
     <>
-      {isModalOpen && <Modal />}
-      <div className="masonary-search flex justify-center flex-col py-12 border-t-2 border-white/30" style={{
-        background: `linear-gradient(90deg, rgba(0, 143, 161, 0.3) 0%, rgba(0, 188, 212, 0.6) 100%), url("${staticImages.hero}") center/cover no-repeat`
+      <div className="masonary-search flex justify-center flex-col py-32 border-t-2 border-white/30" style={{
+        background: `linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), url("${staticImages.hero}") center/cover no-repeat`
       }}>
         <div className="containers flex-col">
           <h4 className="text-center md:text-base text-sm max-w-[780px] mx-auto font-inter  text-white">

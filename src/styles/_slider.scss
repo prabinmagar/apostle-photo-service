@@ -42,3 +42,19 @@
     border-radius: 2px;
   }
 }
+
+.hero-banner-slider {
+  .custom-prev-arrow,
+  .custom-next-arrow {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    padding: 5px;
+
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}

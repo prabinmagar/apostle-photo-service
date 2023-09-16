@@ -22,6 +22,9 @@ import { FaUserAlt } from "react-icons/fa";
 import AuthHeader from "../../components/header/AuthHeader";
 import AuthFooter from "../../components/footer/AuthFooter";
 import { staticImages } from "../../images";
+import countryList from "react-select-country-list";
+import Select from 'react-select';
+import { useMemo } from "react";
 
 const initialSate = {
   name: "",
@@ -41,6 +44,16 @@ export default function Register({ cover }) {
   const [number, setNumber] = useState(false);
   const [specialChar, setSpecialChar] = useState(false);
   const [passwordLength, setPasswordLength] = useState(false);
+  const [country, setCountry] = useState('');
+  const options = useMemo(() => countryList().getData(), []);
+  const changeCountryHandler = value => {
+    setCountry(value);
+  }
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const { name, password, email, confirmPassword } = formData;
 
@@ -81,10 +94,6 @@ export default function Register({ cover }) {
     }
   }, [password]);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -147,6 +156,7 @@ export default function Register({ cover }) {
                     name="name"
                     value={name}
                     onChange={handleInputChange}
+                    autoComplete="username"
                   />
                   <span className="w-[48px] md:h-[48px] h-[42px] flex items-center justify-center text-dark-blue">
                     <FaUserAlt />
@@ -176,6 +186,7 @@ export default function Register({ cover }) {
                       onChange={handleInputChange}
                       name="password"
                       value={password}
+                      autoComplete="new-password"
                     />
                     <span className="w-[48px] md:h-[48px] h-[42px] flex items-center justify-center text-dark-blue">
                       <FaKey />
@@ -188,6 +199,7 @@ export default function Register({ cover }) {
                       className="w-full md:h-[48px] h-[42px] text-dark-blue placeholder:text-dark-blue/60 outline-none opacity-90 text-sm sm:text-base"
                       onChange={handleInputChange}
                       name="confirmPassword"
+                      autoComplete="new-password"
                       value={confirmPassword}
                       onPaste={(e) => {
                         e.preventDefault();
@@ -199,6 +211,9 @@ export default function Register({ cover }) {
                       <FaKey />
                     </span>
                   </div>
+                </div>
+                <div className="border-b-[1px] text-base flex items-stretch form-element">
+                    <Select className="w-full" options={options} value={country} onChange={changeCountryHandler} />
                 </div>
                 <button
                   type="submit"

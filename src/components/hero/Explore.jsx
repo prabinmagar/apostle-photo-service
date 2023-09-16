@@ -29,7 +29,7 @@ export const Explore = () => {
             </p>
           </div>
 
-          <div className="grid explore-grid-one grid-cols-4 grid-rows-3 xxl:gap-4 md:gap-2 gap-1  mt-12">
+          <div className="grid explore-grid-one grid-cols-4 grid-rows-3 xxl:gap-4 md:gap-2 gap-1 mt-12" data-aos="fade-up">
             <Card
               title="Newborn"
               gridClass="xl:col-span-2 row-span-2 md:col-span-3 col-span-4"
@@ -116,7 +116,7 @@ export const Explore1 = () => {
           </p>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8" data-aos="fade-up">
           <Slider
             nextArrow={<CustomNextArrow />}
             prevArrow={<CustomPrevArrow />}
@@ -228,7 +228,7 @@ export const ViewSlider = () => {
 
 export const Features = () => {
   return (
-    <section className="py-16" style ={{
+    <section className="py-16 min-h-screen flex items-center" style ={{
       background: `url("${staticImages.slider_pattern}") center/cover no-repeat`
     }}>
       <div className="containers">

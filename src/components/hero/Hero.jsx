@@ -1,14 +1,4 @@
-import {
-  Input,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-  Checkbox,
-  Button,
-} from "@material-tailwind/react";
-import { BiSearch } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
 import PropTypes from "prop-types";
 import { BsImageFill, BsSearch } from "react-icons/bs";
 import Slider from "react-slick";
@@ -17,103 +7,98 @@ import "slick-carousel/slick/slick-theme.css";
 import CustomNextArrow from "../common/arrow/CustomNextArrow";
 import CustomPrevArrow from "../common/arrow/CustomPrevArrow";
 import { staticImages } from "../../images";
+import { Header } from "../header/Header";
 
 export const Hero = () => {
+  // const settings = {
+  //   dots: false,
+  //   arrows: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToScroll: 1,
+  //   centerMode: true,
+  //   variableWidth: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 4000,
+  // };
+
   const settings = {
     dots: false,
     arrows: true,
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-    centerMode: true,
-    variableWidth: true,
+    slidesToShow: 1,
     autoplay: true,
     autoplaySpeed: 4000,
   };
 
+  const heroBanners = [
+    {
+      id: "banner-1",
+      image: staticImages.banner1,
+      text: "Capturing Moments, Creating Memories: Let Us Tell Your Story"
+    },
+    {
+      id: "banner-2",
+      image: staticImages.banner2,
+      text: "Framing Life's Beauty: Discover the Art of Photography"
+    },
+    {
+      id: "banner-3",
+      image: staticImages.banner3,
+      text: "Elevate Your Visual Story: Where Imagination Meets the Lens"
+    },
+    {
+      id: "banner-4",
+      image: staticImages.banner4,
+      text: "All your photo collection in one place."
+    },
+  ];
+
   return (
-    <>
-      <section
-        className="min-h-[58vh]"
-        style={{
-          background: `linear-gradient(90deg, rgba(0,143,161,0.8) 0%, rgba(0,188,212,0.6) 100%), url("${staticImages.hero}")`,
-        }}
+    <div className="hero-banner-slider">
+      <Slider
+        nextArrow={<CustomNextArrow />}
+        prevArrow={<CustomPrevArrow />}
+        {...settings}
       >
-        <div className="md:max-w-[700px] mx-auto py-12 text-white text-center px-3">
-          <h2 className="xl:text-4xl sm:text-3xl text-2xl max-w-[280px] sm:max-w-[350px] md:max-w-[700px] mx-auto font-bold font-inter mb-4">
-            All your photo collection in one place
-          </h2>
-          <h4 className="md:text-xl sm:text-base text-sm mt-5 lg:mt-0">
-            Explore your high-quality{" "}
-            <BsImageFill className="inline-flex ms-2" /> photos, all in one
-            place
-          </h4>
-          <div className="sm:mt-8 mt-4">
-            <form>
-              <div
-                className="flex items-center rounded xl:h-[56px] h-[52px] ps-5 w-full outline-none text-dark bg-white"
+        {heroBanners.map((banner) => {
+          return (
+            <div className="slider-item" key={banner.id}>
+              <section
+                className="min-h-screen flex flex-col justify-center"
                 style={{
-                  boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 8px",
+                  background: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(${banner.image}) center/cover no-repeat`,
                 }}
               >
-                <input
-                  type="text"
-                  className="h-full focus:caret-moonstone w-full outline-none font-inter text-base font-medium text-dark/60"
-                  placeholder="Search photos here ..."
-                />
-                <button
-                  type="submit"
-                  className="h-[48px] w-[48px] flex items-center justify-center text-[28px] mx-1 px-3 opacity-50 hover:opacity-90 default-transition"
-                >
-                  <BsSearch />
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className="sm:py-8 py-4 overflow-hidden">
-          <div className="overflow-hidden">
-            <Slider
-              nextArrow={<CustomNextArrow />}
-              prevArrow={<CustomPrevArrow />}
-              {...settings}
-            >
-              <Card
-                title="Fashion"
-                image={staticImages.portrait}
-              />
-              <Card
-                title="Newborn"
-                image={staticImages.newborn}
-              />
-              <Card
-                title="Wedding"
-                image={staticImages.wedding}
-              />
-              <Card
-                title="Nature"
-                image={staticImages.nature}
-              />
-              <Card
-                title="Maternity"
-                image={staticImages.maternity}
-              />
-            </Slider>
-          </div>
-        </div>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 py-4 border-b-[1px] border-dark/10 pb-12">
-          <p className="text-white opacity-90 text-base font-inter font-light">
-            Create an account to upload photos.
-          </p>
-          <Button
-            size="lg"
-            className="bg-white rounded text-moonstone  tracking-[1px] border-white border-[1px]"
-          >
-            Sign up for free
-          </Button>
-        </div>
-      </section>
-    </>
+                <div className="md:max-w-[1000px] mx-auto py-12 text-white text-center px-3">
+                  <h2 className="xl:text-5xl sm:text-3xl text-2xl max-w-[280px] sm:max-w-[350px] md:max-w-[1000px] mx-auto font-bold font-inter mb-4">
+                    {banner.text}
+                  </h2>
+                  <h4 className="md:text-xl sm:text-base text-sm mt-5 lg:mt-0">
+                    Explore your high-quality{" "}
+                    <BsImageFill className="inline-flex ms-2" /> photos, all in
+                    one place
+                  </h4>
+                </div>
+                <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 py-4 border-b-[1px] border-dark/10 pb-12">
+                  <p className="text-white opacity-90 text-base font-inter font-medium">
+                    Create an account to upload photos.
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-transparent rounded text-white  tracking-[1px] border-white border-[1px] hover:bg-white hover:text-dark"
+                  >
+                    Sign up for free
+                  </Button>
+                </div>
+              </section>
+            </div>
+          );
+        })}
+      </Slider>
+    </div>
   );
 };
 
