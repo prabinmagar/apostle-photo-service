@@ -41,8 +41,6 @@ export const SearchContent = () => {
   };
 
   
-  console.log(isModalOpen);
-
   return (
     <>
       <div className="masonary-search flex justify-center flex-col py-32 border-t-2 border-white/30" style={{
