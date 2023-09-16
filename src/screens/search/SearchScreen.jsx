@@ -40,8 +40,7 @@ export const SearchContent = () => {
     500: 1,
   };
 
-  const dispatch = useDispatch();
-  const isModalOpen = useSelector(selectIsModalOpen);
+  
   console.log(isModalOpen);
 
   return (
