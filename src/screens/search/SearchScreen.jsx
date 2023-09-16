@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiFilter } from "react-icons/ci";
 import { SiMaterialdesign } from "react-icons/si";
 import {
@@ -18,17 +18,22 @@ import { CgScreenWide, CgStyle } from "react-icons/cg";
 import { Box, ImageList, ImageListItem } from "@mui/material";
 import { imagesData, staticImages } from "../../images";
 import Masonry from "react-masonry-css";
-import { useDispatch, useSelector } from "react-redux";
-import { selectIsModalOpen, setModalOpen } from "../../redux/slices/modalSlice";
-import Modal from "../../components/common/Modal";
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 export const SearchScreen = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
-    <>
+    <div>
       <SearchContent />
-    </>
+    </div>
   );
 };
 
@@ -42,7 +47,7 @@ export const SearchContent = () => {
 
   
   return (
-    <>
+    <div>
       <div className="masonary-search flex justify-center flex-col py-32 border-t-2 border-white/30" style={{
         background: `linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), url("${staticImages.hero}") center/cover no-repeat`
       }}>
@@ -95,6 +100,6 @@ export const SearchContent = () => {
           ))}
         </Masonry>
       </div>
-    </>
+    </div>
   );
 };

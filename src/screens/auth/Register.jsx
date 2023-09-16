@@ -23,7 +23,7 @@ import AuthHeader from "../../components/header/AuthHeader";
 import AuthFooter from "../../components/footer/AuthFooter";
 import { staticImages } from "../../images";
 import countryList from "react-select-country-list";
-import Select from 'react-select';
+import Select from "react-select";
 import { useMemo } from "react";
 
 const initialSate = {
@@ -44,11 +44,11 @@ export default function Register({ cover }) {
   const [number, setNumber] = useState(false);
   const [specialChar, setSpecialChar] = useState(false);
   const [passwordLength, setPasswordLength] = useState(false);
-  const [country, setCountry] = useState('');
+  const [country, setCountry] = useState("");
   const options = useMemo(() => countryList().getData(), []);
-  const changeCountryHandler = value => {
+  const changeCountryHandler = (value) => {
     setCountry(value);
-  }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -93,7 +93,6 @@ export default function Register({ cover }) {
       setPasswordLength(false);
     }
   }, [password]);
-
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -213,7 +212,15 @@ export default function Register({ cover }) {
                   </div>
                 </div>
                 <div className="border-b-[1px] text-base flex items-stretch form-element">
-                    <Select className="w-full" options={options} value={country} onChange={changeCountryHandler} />
+                  <Select
+                    name="country"
+                    className="w-full"
+                    options={options}
+                    value={country}
+                    placeholder="Select a country"
+                    onChange={changeCountryHandler}
+                    isSearchable={true}
+                  />
                 </div>
                 <button
                   type="submit"
@@ -272,7 +279,7 @@ export default function Register({ cover }) {
 
             <div className="border-t-[1px] border-dark/10 pt-4">
               <p className=" text-white font-semibold text-lg text-pink-gradient text-center mt-auto">
-              <Link to = "/">PhotoIdol Studio.</Link>
+                <Link to="/">PhotoIdol Studio.</Link>
               </p>
             </div>
           </div>

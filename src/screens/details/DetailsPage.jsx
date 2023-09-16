@@ -4,10 +4,25 @@ import { Button } from "@material-tailwind/react";
 import PropTypes from "prop-types";
 import { List, ListItem } from "@material-tailwind/react";
 import { GalleryItem } from "../admin/dashboard/Gallery";
-import { BsCalendarDate, BsFillCameraFill } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import {
+  BsCalendarDate,
+  BsEye,
+  BsFillCameraFill,
+  BsShare,
+} from "react-icons/bs";
+import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const DetailsPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   const images = [
     {
       original: staticImages.img1,
@@ -36,9 +51,9 @@ const DetailsPage = () => {
   ];
 
   return (
-    <div className="flex bg-whitesmoke px-3 py-12">
-      <div className="containers w-full bg-white shadow">
-        <div className="grid xl:grid-cols-[auto_340px] gap-8">
+    <div className="flex px-3 py-12 mt-10">
+      <div className="containers w-full bg-white">
+        <div className="grid xl:grid-cols-[auto_340px] gap-12">
           <div>
             <div className="px-2 flex items-center justify-between border-b-[1px] border-black/10 py-4 w-full">
               <div className="flex items-center">
@@ -55,36 +70,53 @@ const DetailsPage = () => {
                   <span className="text-xs font-inter">@marcus</span>
                 </div>
               </div>
-              <p className=" font-semibold text-base lg:inline-block font-inter text-black/70 flex">
-                <span>Likes</span> <AiOutlineHeart />
-              </p>
+              <div>
+                <p className=" font-semibold text-base lg:inline-flex items-center font-inter text-black/70 flex">
+                  <span className="me-3 inline-flex items-center">
+                    <BsEye className="me-2" size={18} />
+                    Views
+                  </span>
+                  <span>120</span>
+                </p>
+                <p className="ms-4 font-semibold text-base lg:inline-flex items-center font-inter text-black/70 flex">
+                  <Link to="/" className="me-3 inline-flex items-center">
+                    <BsShare className="me-2" size={18} />
+                    Share
+                  </Link>
+                </p>
+              </div>
             </div>
             <div className="my-4">
               <ImageGallery items={images.slice(0, 3)} />
             </div>
             <div className="image-description border-t-[1px] border-black/5 py-5 px-2">
-          <p className="opacity-80">
-            A beautiful and ancient spring fed canyon which weaves its way
-            throught 400 meter.
-          </p>
+              <p className="mb-2 font-semibold text-lg">
+                Charming Beauty of the Nature
+              </p>
+              <p className="font-inter">
+                A beautiful and ancient spring fed canyon which weaves its way
+                throught 400 meter.
+              </p>
 
-            <ul className="mt-4">
-              <li className="flex items-center my-2">
-                <span className="me-3 text-gray-800">
-                  <BsCalendarDate size = { 14} />
-                </span>
-                <span className="text-sm font-inter text-gray-600">
-                  Uploaded on June 23, 2023
-                </span>
-              </li>
-              <li className="flex items-center my-2">
-                <span className="me-3 text-gray-800">
-                  <BsFillCameraFill size={15} />
-                </span>
-                <span className="text-sm font-inter text-gray-600">Full HD Quality</span>
-              </li>
-            </ul>
-          </div>
+              <ul className="mt-4 pt-3 border-t-[1px] border-t-gray-200">
+                <li className="flex items-center my-2">
+                  <span className="me-3 text-gray-800">
+                    <BsCalendarDate size={16} />
+                  </span>
+                  <span className="text-base font-inter text-dark">
+                    Uploaded on June 23, 2023
+                  </span>
+                </li>
+                <li className="flex items-center my-2">
+                  <span className="me-3 text-gray-800">
+                    <BsFillCameraFill size={19} />
+                  </span>
+                  <span className="text-base font-inter text-dark">
+                    Full HD Quality
+                  </span>
+                </li>
+              </ul>
+            </div>
             <CommentsForm />
             <Comments />
           </div>
@@ -118,13 +150,9 @@ const DetailsPage = () => {
             <div className="my-6">
               <h3 className="font-inter text-lg font-medium">Latest Photos</h3>
               <div className="grid mt-4 grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-2">
-                {
-                  imagesData.slice(0, 8).map(image => {
-                    return (
-                      <GalleryItem key = {image.id} data = {image} />
-                    )
-                  })
-                }
+                {imagesData.slice(0, 8).map((image) => {
+                  return <GalleryItem key={image.id} data={image} />;
+                })}
               </div>
             </div>
           </div>
@@ -138,13 +166,13 @@ export default DetailsPage;
 
 export const CommentsForm = () => {
   return (
-    <div className="flex flex-col border-t-[1px] border-gray-200 my-10 pt-6 px-3">
+    <div className="flex flex-col px-3">
       <h2 className="pt-3 pb-2 text-gray-800 text-lg font-semibold font-inter">
         Add a new comment
       </h2>
       <form className="w-full">
         <textarea
-          className="bg-white rounded border border-gray-300 resize-none w-full h-40 p-3 placeholder-gray-500 font-inter text-sm focus:outline-none focus:bg-white"
+          className="bg-white rounded border border-gray-300 resize-none w-full h-24 p-3 placeholder-gray-500 font-inter text-sm focus:outline-none focus:bg-white"
           name="body"
           placeholder="Type Your Comment"
           required
@@ -180,7 +208,7 @@ export const Comments = () => {
     },
   ];
   return (
-    <div className="pb-12 px-3">
+    <div className="pb-12 px-3 mt-10">
       <h2 className="text-gray-800 text-lg font-semibold font-inter mb-6">
         Some recent comments
       </h2>

@@ -1,9 +1,28 @@
 import { AiFillFacebook, AiFillPhone } from "react-icons/ai";
 import { BsCalendar3 } from "react-icons/bs";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Card } from "../hero/Hero";
+import CustomNextArrow from "./arrow/CustomNextArrow";
+import CustomPrevArrow from "./arrow/CustomPrevArrow";
+import { staticImages } from "../../images";
 
 const Booking = () => {
+  const settings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    centerMode: true,
+    variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+
   return (
-    <div className="py-16 text-white bg-blue-gradient">
+    <div className="py-16 text-white bg-blue-gradient min-h-screen flex flex-col justify-center">
       <div className="containers px-3">
         <h3 className="xl:text-3xl text-2xl mb-10 text-center font-bold font-inter">
           Contact & Book Us
@@ -30,6 +49,45 @@ const Booking = () => {
                     <span className="text-sm italic">Page link here</span>
                 </div>
             </div>
+        </div>
+
+        <div className="sm:py-8 py-8 overflow-hidden">
+          <div className="overflow-hidden">
+            <Slider
+              nextArrow={<CustomNextArrow />}
+              prevArrow={<CustomPrevArrow />}
+              {...settings}
+            >
+              <Card
+                title="Portrait"
+                image={staticImages.portrait}
+              />
+              <Card
+                title="Newborn"
+                image={staticImages.newborn}
+              />
+              <Card
+                title="Wedding"
+                image={staticImages.wedding}
+              />
+              <Card
+                title="Nature"
+                image={staticImages.nature}
+              />
+              <Card
+                title="Maternity"
+                image={staticImages.maternity}
+              />
+              <Card
+                title="Maternity"
+                image={staticImages.maternity}
+              />
+              <Card
+                title="Fashion"
+                image={staticImages.fash1}
+              />
+            </Slider>
+          </div>
         </div>
       </div>
     </div>

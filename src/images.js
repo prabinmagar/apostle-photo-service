@@ -56,6 +56,7 @@ import banner4 from "./assets/images/banner4.jpg";
 import modal from "./assets/images/modal.jpg";
 import branch from "./assets/images/branch.png";
 import booking from "./assets/images/booking.svg";
+import fash1 from "./assets/images/featured/fash1.jpg";
 
 export const staticImages = {
   mat1,
@@ -115,7 +116,8 @@ export const staticImages = {
   banner4, 
   modal, 
   branch,
-  booking
+  booking,
+  fash1
 };
 
 export const imagesData = [
